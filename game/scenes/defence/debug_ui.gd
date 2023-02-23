@@ -1,6 +1,6 @@
-extends Control
+extends VBoxContainer
 
-@onready var fps: Label = $Lables/FPS
+@onready var fps: Label = $FPS
 
 
 func _process(_delta: float) -> void:

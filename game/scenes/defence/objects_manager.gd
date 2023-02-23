@@ -10,14 +10,11 @@ var _other := Array()
 
 
 var focused_tower : TowerBody
-
-
-func _process(delta: float) -> void:
-	queue_redraw()
+var is_focused := false
 
 
 func _draw() -> void:
-	if not focused_tower or  not focused_tower.is_focused():
+	if not is_focused:
 		return
 	
 	var pos = focused_tower.current_weapon.global_position
@@ -27,6 +24,11 @@ func _draw() -> void:
 	draw_circle(pos, vision_range, color)
 	color.a *= 2
 	draw_arc(pos, vision_range, 0, 2 * PI, 36, color, 4)
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("mouse_click"):
+		EventBus.emit_signal("tower_mouse_focused", focused_tower, is_focused)
 
 
 func build_tower(tower_index, tower_position, side) -> TowerBody:
@@ -99,3 +101,5 @@ func _destroy_active_object():
 
 func _on_tower_focused(focus: bool, tower: TowerBody):
 	focused_tower = tower
+	is_focused = focus
+	queue_redraw()

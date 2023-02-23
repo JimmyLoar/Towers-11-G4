@@ -6,7 +6,7 @@ const GRID_LIMIT_SIZE = [1, 7]
 
 @export var _main_structure := PackedVector2Array([Vector2i.ZERO]) : set = set_structure, get = get_structure
 
-var current_side: Side = Side.RIGHT : set = set_rotate_side
+var current_side:= Side.RIGHT : set = set_rotate_side
 
 var _rotated_structures: Array = Array()
 var _outlines: Array = Array()

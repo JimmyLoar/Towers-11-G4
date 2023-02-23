@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://djvws5mhfk6gf"]
+[gd_scene load_steps=4 format=3 uid="uid://djvws5mhfk6gf"]
 
 [ext_resource type="Texture2D" uid="uid://dw4asl67s2250" path="res://icon.svg" id="1_gerij"]
 [ext_resource type="Script" path="res://game/scenes/defence/ui/tower_information/tower_information_display.gd" id="1_tbxkw"]
 [ext_resource type="Script" path="res://game/scenes/defence/ui/tower_information/selling_bar.gd" id="2_bo7sg"]
-[ext_resource type="Script" path="res://game/scenes/defence/ui/tower_information/text_container.gd" id="3_2joyy"]
-[ext_resource type="PackedScene" uid="uid://cubnomcgfay6e" path="res://game/scenes/defence/ui/tower_information/stat_display.tscn" id="4_gilck"]
 
 [node name="InformationDisplay" type="PanelContainer"]
 clip_contents = true
@@ -51,37 +49,10 @@ stretch_mode = 5
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="TextContainer" type="VBoxContainer" parent="VBoxContainer/StatsMenu"]
+[node name="StatContainer" type="VBoxContainer" parent="VBoxContainer/StatsMenu"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("3_2joyy")
-
-[node name="Main" type="VBoxContainer" parent="VBoxContainer/StatsMenu/TextContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer" parent="VBoxContainer/StatsMenu/TextContainer/Main" instance=ExtResource("4_gilck")]
-layout_mode = 2
-
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer/StatsMenu/TextContainer/Main"]
-layout_mode = 2
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/StatsMenu/TextContainer/Main"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/StatsMenu/TextContainer/Main/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Range:"
-
-[node name="Label2" type="Label" parent="VBoxContainer/StatsMenu/TextContainer/Main/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "4.02"
-horizontal_alignment = 1
-
-[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/StatsMenu/TextContainer/Main"]
-layout_mode = 2
 
 [node name="UpgradeMenu" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2

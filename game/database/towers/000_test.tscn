@@ -6,8 +6,9 @@
 
 [sub_resource type="Resource" id="Resource_5p1m7"]
 script = ExtResource("2_6mclg")
-_main_structure = PackedVector2Array(0, 0, 1, 0, 0, 1, 1, 1, 2, 0, 3, 0)
+_main_structure = PackedVector2Array(0, 0, 1, 0, 0, 1, 1, 1)
 
 [node name="TestTower" instance=ExtResource("1_tbahv")]
 main_weapon_scene = ExtResource("2_csfa7")
+object_name = "Test Tower 0"
 structure = SubResource("Resource_5p1m7")

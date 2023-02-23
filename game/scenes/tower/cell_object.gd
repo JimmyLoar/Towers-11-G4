@@ -42,7 +42,6 @@ var _rotated_structure := PackedVector2Array()
 var _outline_positions := PackedVector2Array()
 var _disabled := false
 var _outline_cache := []
-var _focussed = false
 @onready var shape = $Shape
 @onready var sprite: Sprite2D = $Sprite
 
@@ -172,8 +171,6 @@ func get_global_cell_position():
 	return convert_position_to_cell(self.global_position)
 	
 
-func is_focused():
-	return _focussed
 
 
 static func round_position(value: Vector2, is_mouse := false) -> Vector2:
@@ -192,15 +189,12 @@ func _rotate_objects():
 	sprite.rotation_degrees = 90 * rotate_side
 
 
-
 func _on_mouse_entered():
-	_focussed = true
-	emit_signal("mouse_fucused", true)
+	call_deferred("emit_signal", "mouse_fucused", true)
 	set_flag_pointing("outline", true)
 
 
 func _on_mouse_exited():
-	_focussed = false
 	emit_signal("mouse_fucused", false)
 	set_flag_pointing("outline", false)
 

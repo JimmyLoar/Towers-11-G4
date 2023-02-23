@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6nbq0hc5jn43"]
+
+[ext_resource type="Texture2D" uid="uid://dw4asl67s2250" path="res://icon.svg" id="1_e6jvl"]
+[ext_resource type="Script" path="res://game/scenes/enemy/enemy_main.gd" id="1_k5ii4"]
+[ext_resource type="Texture2D" uid="uid://prax2ysxbnnm" path="res://assets/sprites/ui/kenny ui pack/grey_panel.png" id="3_q208g"]
+[ext_resource type="Texture2D" uid="uid://88juoidqtr0n" path="res://assets/sprites/ui/kenny ui pack/red_panel.png" id="4_nvrjd"]
+[ext_resource type="Script" path="res://game/scenes/enemy/floating text.gd" id="5_l6p4x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3xuo"]
+size = Vector2(77, 40)
+
+[node name="EnemyMain" type="PathFollow2D"]
+position = Vector2(960, 400)
+loop = false
+script = ExtResource("1_k5ii4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_e6jvl")
+region_enabled = true
+region_rect = Rect2(40, 40, 50, 50)
+
+[node name="Body" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+shape = SubResource("RectangleShape2D_k3xuo")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-30, -30, 60, 60)
+
+[node name="UI" type="Node2D" parent="."]
+z_index = 10
+
+[node name="HitpointsBar" type="TextureProgressBar" parent="UI"]
+custom_minimum_size = Vector2(120, 6)
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = -54.0
+step = 0.001
+value = 60.0
+nine_patch_stretch = true
+stretch_margin_left = 1
+stretch_margin_top = 1
+stretch_margin_right = 1
+stretch_margin_bottom = 1
+texture_under = ExtResource("3_q208g")
+texture_progress = ExtResource("4_nvrjd")
+tint_under = Color(1, 1, 1, 0.27451)
+
+[node name="FloatingText" type="Node2D" parent="."]
+script = ExtResource("5_l6p4x")

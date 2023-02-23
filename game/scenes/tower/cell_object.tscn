@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cinv2kp5fu21f"]
+
+[ext_resource type="Script" path="res://game/scenes/tower/cell_object.gd" id="1_qm6lk"]
+[ext_resource type="Texture2D" uid="uid://dw4asl67s2250" path="res://icon.svg" id="2_a4mme"]
+[ext_resource type="Script" path="res://game/classes/grid_structure.gd" id="2_ds7ms"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qiqrx"]
+
+[sub_resource type="Resource" id="Resource_km2cx"]
+script = ExtResource("2_ds7ms")
+_main_structure = PackedVector2Array(0, 0)
+
+[node name="CellObjects" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+input_pickable = true
+physics_material_override = SubResource("PhysicsMaterial_qiqrx")
+script = ExtResource("1_qm6lk")
+structure = SubResource("Resource_km2cx")
+
+[node name="Shape" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+show_behind_parent = true
+texture_filter = 1
+texture = ExtResource("2_a4mme")
+region_rect = Rect2(25, 25, 80, 80)
+
+[node name="VisionNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+visible = false
+position = Vector2(-1.90735e-06, -1.90735e-06)
+scale = Vector2(6, 6)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="screen_entered" from="VisionNotifier" to="." method="_on_vision_notifier_screen_entered"]
+[connection signal="screen_exited" from="VisionNotifier" to="." method="_on_vision_notifier_screen_exited"]

@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://rl61aifqxw0r"]
+
+[ext_resource type="Script" path="res://game/scenes/defence/ui/ui.gd" id="1_ho82q"]
+[ext_resource type="PackedScene" uid="uid://i17tol7rfss4" path="res://game/scenes/defence/ui/tower_selecter/tower_selecter.tscn" id="2_pghhm"]
+[ext_resource type="PackedScene" uid="uid://bxy0nxusf62dk" path="res://game/scenes/defence/ui/tower_selecter/build_cursor.tscn" id="3_upu7a"]
+[ext_resource type="PackedScene" uid="uid://djvws5mhfk6gf" path="res://game/scenes/defence/ui/tower_information/tower_information_display.tscn" id="4_2as01"]
+
+[sub_resource type="GDScript" id="GDScript_6nd35"]
+script/source = "extends ColorRect
+
+
+func _draw():
+	var viewport_size = self.size
+	viewport_size.x = ProjectSettings.get_setting(\"display/window/size/viewport_width\")
+	viewport_size.y = ProjectSettings.get_setting(\"display/window/size/viewport_height\")
+	
+	for x in range(0, viewport_size.x, CellObject.CELL_SIZE.x):
+		draw_line(Vector2(x, 0), Vector2(x, viewport_size.y), Color.BLACK, 1)
+	
+	for y in range(0, viewport_size.y, CellObject.CELL_SIZE.y):
+		draw_line(Vector2(0, y), Vector2(viewport_size.x, y), Color.BLACK, 1)
+"
+
+[sub_resource type="GDScript" id="GDScript_na1a7"]
+script/source = "extends Label
+
+func _ready() -> void:
+	EventBus.connect(\"ui_defence_wave_number_change\", _update)
+
+
+func _update(value, max):
+	self.text = \"Wave: %s/%s\" % [value, max]
+"
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_ho82q")
+
+[node name="TowerSelecter" parent="." instance=ExtResource("2_pghhm")]
+offset_right = 818.0
+
+[node name="Background" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.568627, 0.568627, 0.235294)
+script = SubResource("GDScript_6nd35")
+
+[node name="BuildCursor" parent="." instance=ExtResource("3_upu7a")]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -140.0
+offset_top = 16.0
+offset_right = -28.0
+offset_bottom = 75.0
+grow_horizontal = 0
+
+[node name="Wave" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Wave: 0"
+script = SubResource("GDScript_na1a7")
+
+[node name="Live" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Money" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="InformationDisplay" parent="." instance=ExtResource("4_2as01")]
+
+[connection signal="tower_selected" from="TowerSelecter" to="." method="_on_tower_selerter_tower_selected"]
+[connection signal="intersection_change" from="BuildCursor" to="." method="_on_build_cursor_intersection_change"]
+[connection signal="pressed" from="BuildCursor" to="." method="_on_build_cursor_pressed"]

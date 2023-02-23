@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://damdnok1xvuhd"]
+
+[ext_resource type="PackedScene" uid="uid://c6nbq0hc5jn43" path="res://game/scenes/enemy/enemy_main.tscn" id="1_q0bt4"]
+[ext_resource type="Texture2D" uid="uid://copjwvkjhd3np" path="res://assets/sprites/enemies/tanks/halftrack none blue.png" id="2_osm5m"]
+
+[node name="Test" instance=ExtResource("1_q0bt4")]
+stat_hitpoints = 100000
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_osm5m")
+vframes = 2
+frame = 1
+region_enabled = false

@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://boicjt6g0kbex"]
+
+[ext_resource type="FontFile" uid="uid://v76f8dvtdpqj" path="res://assets/fonts/press_start_2p-regular.ttf" id="1_rb7yf"]
+
+[resource]
+default_font = ExtResource("1_rb7yf")
+default_font_size = 16

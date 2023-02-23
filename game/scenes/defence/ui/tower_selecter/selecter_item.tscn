@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3ad5fq0ih4y4"]
+
+[ext_resource type="Script" path="res://game/scenes/defence/ui/tower_selecter/selecter_item.gd" id="1_uivdh"]
+[ext_resource type="Texture2D" uid="uid://dw4asl67s2250" path="res://icon.svg" id="1_xxxa8"]
+[ext_resource type="FontFile" uid="uid://v76f8dvtdpqj" path="res://assets/fonts/press_start_2p-regular.ttf" id="2_u1xt2"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_jonyb"]
+keycode = 52
+
+[sub_resource type="Shortcut" id="Shortcut_s6qxn"]
+events = [SubResource("InputEventKey_jonyb")]
+
+[node name="SelecterItem" type="Button"]
+custom_minimum_size = Vector2(120, 44)
+offset_right = 40.0
+offset_bottom = 44.0
+size_flags_horizontal = 3
+focus_mode = 0
+shortcut = SubResource("Shortcut_s6qxn")
+shortcut_in_tooltip = false
+script = ExtResource("1_uivdh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="IconTexture" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+texture = ExtResource("1_xxxa8")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="NumIndicate" type="Label" parent="VBoxContainer/IconTexture"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 42.0
+offset_bottom = 19.0
+
+[node name="Prise" type="Label" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("2_u1xt2")
+theme_override_font_sizes/font_size = 13
+text = "$99999999"
+horizontal_alignment = 1
+vertical_alignment = 1

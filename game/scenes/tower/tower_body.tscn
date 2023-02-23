@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcr0urvp1sgyf"]
+
+[ext_resource type="PackedScene" uid="uid://cinv2kp5fu21f" path="res://game/scenes/tower/cell_object.tscn" id="1_4gndp"]
+[ext_resource type="Script" path="res://game/scenes/tower/tower_body.gd" id="2_6ma2l"]
+[ext_resource type="Texture2D" uid="uid://dkojccyg8i1ox" path="res://assets/sprites/towers/icons/cannon normal.png" id="3_orpe3"]
+[ext_resource type="Texture2D" uid="uid://ce5k1qojc6siq" path="res://assets/sprites/towers/base/weapon_base_medium.png" id="4_uevj5"]
+
+[node name="TowerBody" instance=ExtResource("1_4gndp")]
+script = ExtResource("2_6ma2l")
+main_weapon_scene = null
+object_name = "NewTower"
+main_icon = ExtResource("3_orpe3")
+_flag_painting_cells = true
+
+[node name="Shape" parent="." index="0"]
+position = Vector2(0.5, 0.5)
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource("4_uevj5")
+
+[node name="VisionNotifier" parent="." index="2"]
+position = Vector2(0, 0)
+scale = Vector2(3, 3)

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://p1326hkka77a"]
+
+[ext_resource type="PackedScene" uid="uid://3v52ekqeexcn" path="res://game/scenes/tower/weapon/tweapon_dynamic.tscn" id="1_s4sue"]
+
+[node name="TowerWeaponDynamic" instance=ExtResource("1_s4sue")]
+weapon_name = "TestWeapon"
+stat_firerate = 100.0
+stat_heating_power = 500

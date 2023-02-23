@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://cprcy14k6dh78"]
+
+[ext_resource type="Texture2D" uid="uid://crayyb326usj0" path="res://assets/sprites/towers/projecttiles/turret_01_bullet_01.png" id="1_1ob7s"]
+[ext_resource type="Script" path="res://game/scenes/tower/projetiles/bullet.gd" id="1_wer8u"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_28ejs"]
+radius = 3.0
+height = 16.0
+
+[sub_resource type="Gradient" id="Gradient_waib3"]
+offsets = PackedFloat32Array(0, 0.922414, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.392241, 0.392241, 0.392241, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_brybb"]
+gradient = SubResource("Gradient_waib3")
+width = 30
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_447n1"]
+gradient = SubResource("Gradient_waib3")
+width = 30
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1on5g"]
+lifetime_randomness = 0.2
+emission_shape = 1
+emission_sphere_radius = 1.0
+particle_flag_disable_z = true
+direction = Vector3(-1, 0, 0)
+spread = 60.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 51.85
+initial_velocity_max = 59.26
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 2.0
+scale_max = 4.0
+color_ramp = SubResource("GradientTexture1D_447n1")
+color_initial_ramp = SubResource("GradientTexture1D_brybb")
+
+[node name="Bullet" type="Node2D"]
+position = Vector2(13, 11)
+script = ExtResource("1_wer8u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1ob7s")
+
+[node name="HitArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 24
+monitorable = false
+priority = 3.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_28ejs")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1.19209e-07, -2.38419e-07)
+rect = Rect2(-7, -3, 14, 6)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 64
+process_material = SubResource("ParticleProcessMaterial_1on5g")
+one_shot = true
+explosiveness = 0.9
+randomness = 0.3
+draw_order = 2
+
+[connection signal="area_entered" from="HitArea" to="." method="_on_hit_area_area_entered"]
+[connection signal="area_exited" from="HitArea" to="." method="_on_hit_area_area_exited"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

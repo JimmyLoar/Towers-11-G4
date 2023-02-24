@@ -41,6 +41,7 @@ func set_enable(new: bool):
 	_cursor.visible = enable
 	_cursor.queue_redraw()
 	Engine.time_scale = 0.05 if enable else 1
+	EventBus.emit_signal("tower_mouse_focused", null, false)
 	if not enable and is_destroy_mode():
 		_is_destroy = false
 
@@ -52,9 +53,6 @@ func set_posibility_build(posibility: bool):
 
 func is_destroy_mode():
 	return _is_destroy
-
-
-
 
 
 func _on_build_cursor_pressed(point_position: Vector2, rotate_side: int):

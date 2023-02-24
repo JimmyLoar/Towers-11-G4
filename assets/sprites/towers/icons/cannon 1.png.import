@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkojccyg8i1ox"
-path="res://.godot/imported/cannon normal.png-642d253110fd9bdb61936d913674caa3.ctex"
+path="res://.godot/imported/cannon 1.png-79adacf24f42588ad0dd4bc63cd0fcdc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/towers/icons/cannon normal.png"
-dest_files=["res://.godot/imported/cannon normal.png-642d253110fd9bdb61936d913674caa3.ctex"]
+source_file="res://assets/sprites/towers/icons/cannon 1.png"
+dest_files=["res://.godot/imported/cannon 1.png-79adacf24f42588ad0dd4bc63cd0fcdc.ctex"]
 
 [params]
 

@@ -34,7 +34,7 @@ func update_name(_name):
 
 
 func update_stats(stats: Dictionary):
-	var difference = stat_container.get_child_count() - stats.size()
+	var difference = (stat_container.get_child_count() / 2) - stats.size()
 	if difference < 0:
 		add_stat_display(abs(difference))
 	
@@ -48,17 +48,23 @@ func add_stat_display(count: int):
 	for _i in count:
 		var new_stat_display := stat_display_scene.instantiate()
 		stat_container.add_child(new_stat_display)
+		var separater := HSeparator.new()
+		stat_container.add_child(separater)
 
 
 func remove_stats_display(count: int):
 	for _i in count:
 		stat_container.get_child(0).queue_free()
+		stat_container.get_child(0).queue_free()
 
 
 func update_stat_display(stats: Dictionary):
-	for index in stat_container.get_child_count():
-		var child = stat_container.get_child(index)
-		var stat_key = stats.keys()[index] 
+	for index in stat_container.get_child_count() / 2:
+		var child := stat_container.get_child(index * 2)
+		if child is HSeparator:
+			continue
+		
+		var stat_key: String = stats.keys()[index] 
 		child.set_stat_name(stat_key)
 		child.set_stat_value(stats[stat_key])
 		child.set_stat_change(0)

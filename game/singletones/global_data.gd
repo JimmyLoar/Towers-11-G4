@@ -24,4 +24,4 @@ const CORNERS_OFFSET = [
 ]
 
 
-var towers_selected: Array = [0, 0, 0, 0] #tower indexs
+var towers_selected: Array = [0, 1, 0, 1] #tower indexs

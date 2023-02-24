@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://djvws5mhfk6gf"]
+[gd_scene load_steps=5 format=3 uid="uid://djvws5mhfk6gf"]
 
 [ext_resource type="Texture2D" uid="uid://dw4asl67s2250" path="res://icon.svg" id="1_gerij"]
 [ext_resource type="Script" path="res://game/scenes/defence/ui/tower_information/tower_information_display.gd" id="1_tbxkw"]
 [ext_resource type="Script" path="res://game/scenes/defence/ui/tower_information/selling_bar.gd" id="2_bo7sg"]
+[ext_resource type="PackedScene" uid="uid://cubnomcgfay6e" path="res://game/scenes/defence/ui/tower_information/stat_display.tscn" id="3_87pql"]
 
 [node name="InformationDisplay" type="PanelContainer"]
 clip_contents = true
@@ -53,6 +54,37 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="StatDisplay" parent="VBoxContainer/StatsMenu/StatContainer" instance=ExtResource("3_87pql")]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/StatsMenu/StatContainer"]
+layout_mode = 2
+
+[node name="StatDisplay2" parent="VBoxContainer/StatsMenu/StatContainer" instance=ExtResource("3_87pql")]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/StatsMenu/StatContainer"]
+layout_mode = 2
+
+[node name="StatDisplay3" parent="VBoxContainer/StatsMenu/StatContainer" instance=ExtResource("3_87pql")]
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer/StatsMenu/StatContainer"]
+layout_mode = 2
+
+[node name="StatDisplay4" parent="VBoxContainer/StatsMenu/StatContainer" instance=ExtResource("3_87pql")]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="VBoxContainer/StatsMenu/StatContainer"]
+layout_mode = 2
+
+[node name="StatDisplay5" parent="VBoxContainer/StatsMenu/StatContainer" instance=ExtResource("3_87pql")]
+layout_mode = 2
+
+[node name="HSeparator5" type="HSeparator" parent="VBoxContainer/StatsMenu/StatContainer"]
+layout_mode = 2
 
 [node name="UpgradeMenu" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2

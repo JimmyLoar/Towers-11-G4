@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnti04ckxc6up"
-path="res://.godot/imported/turret_01_mk1.png-73dd6773dc416175baa901c9eb5a5b91.ctex"
+path="res://.godot/imported/turret_01_01.png-9e2c7f8e705bc75a86a578cc7e76b5d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/towers/weapons/cannon normal/turret_01_mk1.png"
-dest_files=["res://.godot/imported/turret_01_mk1.png-73dd6773dc416175baa901c9eb5a5b91.ctex"]
+source_file="res://assets/sprites/towers/weapons/cannon normal/turret_01_01.png"
+dest_files=["res://.godot/imported/turret_01_01.png-9e2c7f8e705bc75a86a578cc7e76b5d6.ctex"]
 
 [params]
 

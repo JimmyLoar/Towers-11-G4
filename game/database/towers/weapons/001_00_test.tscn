@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://diu8v5x0sibju"]
+
+[ext_resource type="PackedScene" uid="uid://3v52ekqeexcn" path="res://game/scenes/tower/weapon/tweapon_dynamic.tscn" id="1_konel"]
+[ext_resource type="Texture2D" uid="uid://dl72be2fy8aob" path="res://assets/sprites/towers/weapons/cannon normal/turret_02_01.png" id="2_wq3ms"]
+
+[node name="TowerWeaponDynamic" instance=ExtResource("1_konel")]
+weapon_name = "TestWeapon"
+stat_base_damage = 5
+stat_firerate = 2.4
+stat_vision_range = 8.0
+stat_heating_power = 100
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_wq3ms")

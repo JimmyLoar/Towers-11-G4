@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://cn1r4f31oici5"]
 
-[ext_resource type="PackedScene" uid="uid://bcr0urvp1sgyf" path="res://game/scenes/tower/tower_body.tscn" id="1_0wno7"]
+[ext_resource type="PackedScene" path="res://game/scenes/tower/tower_body.tscn" id="1_0wno7"]
 
 [node name="TowerBody" instance=ExtResource("1_0wno7")]

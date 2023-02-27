@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cprcy14k6dh78"]
+[gd_scene load_steps=8 format=3 uid="uid://dsi12tdhc0pd1"]
 
 [ext_resource type="Texture2D" uid="uid://crayyb326usj0" path="res://assets/sprites/towers/projecttiles/turret_01_bullet_01.png" id="1_1ob7s"]
 [ext_resource type="Script" path="res://game/scenes/tower/projetiles/bullet.gd" id="1_wer8u"]

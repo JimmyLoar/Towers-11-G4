@@ -6,7 +6,7 @@
 [node name="TowerWeaponDynamic" instance=ExtResource("1_konel")]
 weapon_name = "TestWeapon"
 stat_base_damage = 5
-stat_firerate = 2.4
+stat_firerate = 20.0
 stat_vision_range = 8.0
 stat_heating_power = 100
 

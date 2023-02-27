@@ -23,6 +23,7 @@ var  _damaged_cache := {
 	GlobalData.AttackType.NORMAL : 0.0,
 	GlobalData.AttackType.HEAT : 0.0,
 }
+
 var _deathed := false
 
 @onready var sprite: Sprite2D = $Sprite2D

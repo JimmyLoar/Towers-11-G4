@@ -31,8 +31,14 @@ func attack():
 	else:
 		ammo_box.add_child(projectile)
 	
-	projectile.set_transform(sprite.get_transform())
-	projectile.launch(500)
+	match weapon_type:
+		WeaponType.BULLET:
+			projectile.set_transform(sprite.get_transform())
+			projectile.launch(1500)
+		WeaponType.LASERBEAM:
+			projectile.set_transform(sprite.get_transform())
+			projectile.deploy(self.global_position.distance_to(target_enemy.position))
+	
 	recharge_timer.start(1 / stat_firerate)
 
 

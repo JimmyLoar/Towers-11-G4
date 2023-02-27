@@ -46,7 +46,6 @@ func _on_hit_area_area_entered(area: Area2D) -> void:
 	emit_signal("hited", enemy, self)
 	call_deferred("_disappear")
 	collision_shape.set_deferred("disabled", true)
-#	print_debug("bullet disappeared [%s]" % [Engine.get_process_frames()])
 
 
 func _on_hit_area_area_exited(area: Area2D) -> void:

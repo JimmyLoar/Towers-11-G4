@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://p1326hkka77a"]
+[gd_scene load_steps=3 format=3 uid="uid://p1326hkka77a"]
 
 [ext_resource type="PackedScene" uid="uid://3v52ekqeexcn" path="res://game/scenes/tower/weapon/tweapon_dynamic.tscn" id="1_s4sue"]
+[ext_resource type="PackedScene" uid="uid://dwridlla1ven7" path="res://game/scenes/tower/projetiles/bullet_expotion.tscn" id="2_4u2pt"]
 
 [node name="TowerWeaponDynamic" instance=ExtResource("1_s4sue")]
 weapon_name = "TestWeapon"
+projectile_scene = ExtResource("2_4u2pt")
+stat_firerate = 1.0
 stat_heating_power = 25

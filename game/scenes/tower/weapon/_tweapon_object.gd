@@ -1,6 +1,10 @@
 class_name TWeaponObject
 extends Node2D
 
+enum WeaponType {BULLET, LASERBEAM}
+
+@export var weapon_type : WeaponType = 0
+
 @export_placeholder("Tower Weapon") var weapon_name := ""
 @export var projectile_scene : PackedScene
 

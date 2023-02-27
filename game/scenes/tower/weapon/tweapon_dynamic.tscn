@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://3v52ekqeexcn"]
 
-[ext_resource type="PackedScene" path="res://game/scenes/tower/weapon/_tweapon_object.tscn" id="1_7gc7q"]
+[ext_resource type="PackedScene" uid="uid://bxp56jg5eun05" path="res://game/scenes/tower/weapon/_tweapon_object.tscn" id="1_7gc7q"]
 [ext_resource type="Script" path="res://game/scenes/tower/weapon/tweapon_dynamic.gd" id="2_16q28"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rgbbq"]

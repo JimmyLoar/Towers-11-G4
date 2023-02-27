@@ -22,4 +22,5 @@ func _disappear():
 	self.set_physics_process(false)
 	self.visible = false
 	emit_signal("disappeared", self)
+	print_stack()
 

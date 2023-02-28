@@ -19,6 +19,8 @@ func deploy(enemy_distance : float) -> void:
 
 func _hit(area : Area2D) -> void:
 	var enemy : EnemyObject = area.get_parent()
+	hitbox_shape.set_deferred("disabled", true)
+	self.visible = false
 	emit_signal("hited", enemy, self)
 	call_deferred("_disappear")
 
@@ -29,6 +31,4 @@ func _reset():
 
 
 func disappear():
-	hitbox_shape.set_deferred("disabled", true)
-	self.visible = false
-
+	pass

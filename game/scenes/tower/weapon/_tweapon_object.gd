@@ -3,10 +3,10 @@ extends Node2D
 
 enum WeaponType {BULLET, LASERBEAM}
 
-@export var weapon_type : WeaponType = 0
+@export var weapon_type: WeaponType = 0
 
 @export_placeholder("Tower Weapon") var weapon_name := ""
-@export var projectile_scene : PackedScene
+@export var projectile_scene: PackedScene
 
 @export_group("TowerUpgrades", "upgrade_")
 
@@ -37,7 +37,7 @@ func _init():
 
 func _ready() -> void:
 	if vision_shape.shape is CircleShape2D:
-		vision_shape.shape.radius = stat_vision_range * GlobalData.CELL_SIZE.x
+		vision_shape.shape.radius = stat_vision_range * CellObject.CELL_SIZE.x
 
 
 func get_main_texture():
@@ -65,7 +65,7 @@ func _lost_target():
 
 
 func _create_projectile() -> MainProjectile:
-	var projectile : MainProjectile
+	var projectile: MainProjectile
 #	print("pool size is %s (is empty %s) [%s]" % [_projectiles_pool.size(), _projectiles_pool.is_empty(), Engine.get_process_frames()])
 	if _projectiles_pool.is_empty():
 #		print_debug("create new bullet [%s]" % Engine.get_process_frames())

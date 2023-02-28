@@ -23,8 +23,8 @@ func _ready() -> void:
 		structure = GridStructure.new()
 		structure.set_structure(PackedVector2Array([Vector2.ZERO]))
 	
-	limit_size.x = ProjectSettings.get_setting("display/window/size/viewport_width") / GlobalData.CELL_SIZE.x
-	limit_size.y = ProjectSettings.get_setting("display/window/size/viewport_height") / GlobalData.CELL_SIZE.y
+	limit_size.x = ProjectSettings.get_setting("display/window/size/viewport_width") / CellObject.CELL_SIZE.x
+	limit_size.y = ProjectSettings.get_setting("display/window/size/viewport_height") / CellObject.CELL_SIZE.y
 
 
 func _process(_delta):
@@ -32,7 +32,7 @@ func _process(_delta):
 		return
 	
 	var new_pos = CellObject.round_position(get_global_mouse_position(), true)
-	var cell_pos = new_pos / GlobalData.CELL_SIZE
+	var cell_pos = new_pos / CellObject.CELL_SIZE
 	if cell_pos != last_cell_position:
 		last_cell_position = cell_pos
 		
@@ -91,8 +91,8 @@ func draw_dollar(color):
 
 func draw_cells(center: Vector2, color: Color):
 	for pos in structure.get_rotated_structure(rotate_side):
-		var rect_size = GlobalData.CELL_SIZE - CellObject.CELL_DRAW_BORDER * 2
-		var rect_position = (pos - center) * GlobalData.CELL_SIZE - (CellObject.CELL_OFFSET - CellObject.CELL_DRAW_BORDER)
+		var rect_size = CellObject.CELL_SIZE - CellObject.CELL_DRAW_BORDER * 2
+		var rect_position = (pos - center) * CellObject.CELL_SIZE - (CellObject.CELL_OFFSET - CellObject.CELL_DRAW_BORDER)
 		draw_rect(Rect2(rect_position, rect_size), Color.WHITE * color)
 		draw_rect(Rect2(rect_position, rect_size), Color.WEB_GRAY * color, false, 2)
 

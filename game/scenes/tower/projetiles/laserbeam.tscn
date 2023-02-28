@@ -8,10 +8,12 @@ b = Vector2(1.39876e-06, 32)
 
 [node name="Laserbeam" type="Node2D"]
 script = ExtResource("1_57sqs")
+timelife = 0.1
 
 [node name="Line2D" type="Line2D" parent="."]
 points = PackedVector2Array(0, 0, 0, 0)
-default_color = Color(0, 1, 0.890196, 1)
+width = 6.0
+default_color = Color(0, 2, 1.2, 1)
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4

@@ -7,12 +7,12 @@ signal death
 const COLD_GRADIENT = preload("res://game/resources/gradient/cold_modulate.tres")
 const HEAT_GRADIENT = preload("res://game/resources/gradient/heat_modulate.tres")
 const UPDATE_IN_SECOND = 4
+const HP_INCREASE_TO_WAVE = 0.2
 
 @export_placeholder("New Enemy") var object_name := ""
 @export_group("Moving", "moving_")
 @export_range(0, 100, 1) var moving_speed := 20
 @export var moving_is_stopped := true
-@export_range(0, 10, 0.01, "or_greater") var _density: float = 1.0
 
 #@export_group("Stats", "stat_")
 @export_range(0, 1000, 1, "or_greater") var stat_hitpoints := 100
@@ -65,7 +65,7 @@ func reset(wave: float):
 	moving_is_stopped = false
 	body_shape.disabled = false
 	
-	var max_hp = stat_hitpoints + stat_hitpoints * (wave / 5)
+	var max_hp = stat_hitpoints + stat_hitpoints * wave * HP_INCREASE_TO_WAVE
 	hitpoints_bar.max_value = max_hp
 	hitpoints_bar.value = max_hp
 	_deathed = false

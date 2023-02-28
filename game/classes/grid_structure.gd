@@ -6,7 +6,7 @@ const GRID_LIMIT_SIZE = [1, 7]
 
 @export var _main_structure := PackedVector2Array([Vector2i.ZERO]) : set = set_structure, get = get_structure
 
-var current_side:= Side.RIGHT : set = set_rotate_side
+var current_side := GridStructure.Side.RIGHT : set = set_rotate_side
 
 var _rotated_structures: Array = Array()
 var _outlines: Array = Array()
@@ -42,24 +42,24 @@ func get_structure():
 	return _main_structure
 
 
-func get_center(side: Side = current_side, is_round := true) -> Vector2:
+func get_center(side: GridStructure.Side = current_side, is_round := true) -> Vector2:
 	var result = get_size(side) / 2
 	if is_round:
 		return result.floor()
 	return result
 
 
-func get_size(side: Side = current_side) -> Vector2:
+func get_size(side: GridStructure.Side = current_side) -> Vector2:
 	return _get_maximal_point(get_rotated_structure(side)) - _get_minimal_point(get_rotated_structure(side))
 
 
-func get_rotated_structure(side: Side = current_side) -> PackedVector2Array:
+func get_rotated_structure(side: GridStructure.Side = current_side) -> PackedVector2Array:
 	if _rotated_structures[side].is_empty():
 		_rotated_structures[side] = _rotate(side)
 	return _rotated_structures[side]
 
 
-func get_outline(side: Side = current_side) -> PackedVector2Array:
+func get_outline(side: GridStructure.Side = current_side) -> PackedVector2Array:
 	var outline: PackedVector2Array= _outlines[side]
 	if outline is PackedVector2Array:
 		return outline
@@ -81,7 +81,7 @@ func _update_rotations():
 		_rotated_structures[side] = _rotate(side)
 
 
-func _rotate(side: Side):
+func _rotate(side: GridStructure.Side):
 	var rotated_structure := PackedVector2Array()
 	for cell in _main_structure:
 		var new_cell = cell.rotated(deg_to_rad(90) * side)
@@ -120,7 +120,7 @@ func _update_outlines():
 		_outlines[side] = _count_ountile_positions(side)
 
 
-func _count_ountile_positions(side: Side):
+func _count_ountile_positions(side: GridStructure.Side):
 	var structure = get_rotated_structure(side)
 	var array := _found_corners_positions(structure)
 	array = Geometry2D.convex_hull(array)
@@ -153,8 +153,8 @@ func _count_ountile_positions(side: Side):
 func _found_corners_positions(structure: PackedVector2Array) -> PackedVector2Array:
 	var array := Array()
 	for cell_pos in structure:
-		for corner_offset in GlobalData.CORNERS_OFFSET:
-			var corner_pos: Vector2 = (cell_pos + corner_offset / 2) * GlobalData.CELL_SIZE
+		for corner_offset in CellObject.CORNERS_OFFSET:
+			var corner_pos: Vector2 = (cell_pos + corner_offset / 2) * CellObject.CELL_SIZE
 			corner_pos -= (Vector2.ONE * corner_offset * 4)
 			array.append(corner_pos) 
 			

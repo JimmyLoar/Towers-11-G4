@@ -35,6 +35,7 @@ func attack():
 		WeaponType.BULLET:
 			projectile.set_transform(sprite.get_transform())
 			projectile.launch(1500)
+		
 		WeaponType.LASERBEAM:
 			projectile.set_transform(sprite.get_transform())
 			projectile.deploy(self.global_position.distance_to(target_enemy.position))

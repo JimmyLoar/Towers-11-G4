@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://dgbfw0vgj3583"]
+
+[ext_resource type="PackedScene" uid="uid://cprcy14k6dh78" path="res://game/scenes/tower/projetiles/bullet.tscn" id="1_vh104"]
+[ext_resource type="Script" path="res://game/scenes/tower/projetiles/bullet_expotion.gd" id="2_sxpj4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kigv1"]
+radius = 100.0
+
+[sub_resource type="Curve" id="Curve_4svrc"]
+_data = [Vector2(0, 0.530944), 0.0, 0.0, 0, 0, Vector2(0.812901, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_xer2h"]
+curve = SubResource("Curve_4svrc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_k6efw"]
+emission_shape = 1
+emission_sphere_radius = 4.0
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 120.0
+initial_velocity_max = 300.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+damping_min = 100.0
+damping_max = 100.0
+scale_curve = SubResource("CurveTexture_xer2h")
+
+[node name="BulletExpotion" instance=ExtResource("1_vh104")]
+position = Vector2(67, 69)
+script = ExtResource("2_sxpj4")
+
+[node name="ExplotionArea" type="Area2D" parent="." index="2"]
+collision_layer = 4
+collision_mask = 24
+
+[node name="ExplotionShape" type="CollisionShape2D" parent="ExplotionArea" index="0"]
+shape = SubResource("CircleShape2D_kigv1")
+
+[node name="ExplotionParticles" type="GPUParticles2D" parent="." index="5"]
+emitting = false
+amount = 128
+process_material = SubResource("ParticleProcessMaterial_k6efw")
+lifetime = 0.4
+one_shot = true
+explosiveness = 0.7
+collision_base_size = 16.0
+trail_enabled = true
+trail_lifetime = 0.1
+trail_sections = 3
+trail_section_subdivisions = 2
+
+[connection signal="area_entered" from="ExplotionArea" to="." method="_on_explotion_area_area_entered"]

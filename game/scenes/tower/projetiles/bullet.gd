@@ -5,8 +5,6 @@ enum Env{AIR, METAL}
 
 const  MAXIMAL_MOVING_SPEED := 3840
 
-@export var mass := 100
-
 var moving_speed := 0.0
 var velocity := Vector2()
 var penetration: int = 3
@@ -19,7 +17,6 @@ var _reaming_penetration = penetration
 
 func _ready() -> void:
 	self.visible = true
-	launch(500)
 
 
 func _physics_process(delta: float) -> void:
@@ -28,14 +25,13 @@ func _physics_process(delta: float) -> void:
 	
 	if moving_speed <= 0:
 		_disappear()
+	
+	else:
+		moving_speed -= delta * 10
 
 
 func launch(strength: int):
 	moving_speed = strength
-
-
-func get_punching_power() -> float:
-	return moving_speed / mass
 
 
 func _reset() -> void:
@@ -50,7 +46,6 @@ func _on_hit_area_area_entered(area: Area2D) -> void:
 	emit_signal("hited", enemy, self)
 	call_deferred("_disappear")
 	collision_shape.set_deferred("disabled", true)
-#	print_debug("bullet disappeared [%s]" % [Engine.get_process_frames()])
 
 
 func _on_hit_area_area_exited(area: Area2D) -> void:

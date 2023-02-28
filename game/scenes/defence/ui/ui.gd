@@ -55,14 +55,6 @@ func is_destroy_mode():
 	return _is_destroy
 
 
-func _on_build_cursor_pressed(point_position: Vector2, rotate_side: int):
-	if _is_destroy:
-		emit_signal("tower_distroed", point_position)
-	
-	elif _posibility_build:
-		emit_signal("tower_builded", selected_tower_index, point_position, rotate_side)
-
-
 func _on_tower_selerter_tower_selected(_index: int) -> void:
 	var structure : GridStructure
 	set_enable(true)
@@ -81,7 +73,14 @@ func _on_tower_selerter_tower_selected(_index: int) -> void:
 		_cursor.set_image_icon(tower.get_icon())
 	
 	_cursor.set_structure(structure)
+
+
+func _on_build_cursor_pressed(point_position: Vector2, rotate_side: int):
+	if _is_destroy:
+		emit_signal("tower_distroed", point_position)
 	
+	elif _posibility_build:
+		emit_signal("tower_builded", selected_tower_index, point_position, rotate_side)
 
 
 func _on_build_cursor_intersection_change(has_intersection) -> void:

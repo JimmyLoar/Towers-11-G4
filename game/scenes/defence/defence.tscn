@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c3larsht776ky"]
 
 [ext_resource type="Script" path="res://game/scenes/defence/defence.gd" id="1_qvq1s"]
-[ext_resource type="PackedScene" uid="uid://rl61aifqxw0r" path="res://game/scenes/defence/ui/ui.tscn" id="2_vg15m"]
+[ext_resource type="PackedScene" uid="uid://brka2gx5mpoju" path="res://game/scenes/defence/ui/ui.tscn" id="2_vg15m"]
 [ext_resource type="Script" path="res://game/scenes/defence/objects_manager.gd" id="4_c1uqm"]
 
 [sub_resource type="Environment" id="Environment_oyx3i"]

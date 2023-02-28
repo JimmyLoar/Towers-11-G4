@@ -20,8 +20,6 @@ const CORNERS_OFFSET = [
 	Vector2(-1, 1),
 ]
 
-enum LookAt{RIGHT, DOWN, LEFT, UP}
-
 @export_category("CellObject")
 
 #@export_group("Ojbect", "object")

@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://rl61aifqxw0r"]
+[gd_scene load_steps=8 format=3 uid="uid://brka2gx5mpoju"]
 
 [ext_resource type="Script" path="res://game/scenes/defence/ui/ui.gd" id="1_ho82q"]
 [ext_resource type="PackedScene" uid="uid://i17tol7rfss4" path="res://game/scenes/defence/ui/tower_selecter/tower_selecter.tscn" id="2_pghhm"]
-[ext_resource type="PackedScene" uid="uid://bxy0nxusf62dk" path="res://game/scenes/defence/ui/tower_selecter/build_cursor.tscn" id="3_upu7a"]
+[ext_resource type="PackedScene" uid="uid://bxy0nxusf62dk" path="res://game/scenes/defence/ui/build_cursor.tscn" id="3_upu7a"]
 [ext_resource type="PackedScene" uid="uid://djvws5mhfk6gf" path="res://game/scenes/defence/ui/tower_information/tower_information_display.tscn" id="4_2as01"]
 [ext_resource type="Script" path="res://game/scenes/defence/debug_ui.gd" id="5_hns6f"]
 

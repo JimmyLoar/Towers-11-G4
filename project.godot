@@ -58,6 +58,16 @@ mouse_click={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Defult"
+2d_physics/layer_2="Structures"
+2d_physics/layer_3="PlayerProjectile"
+2d_physics/layer_4="EnemiesGround"
+2d_physics/layer_5="EnemiesAir"
+2d_physics/layer_6="TilesRoad"
+2d_physics/layer_7="TilesWall"
+
 [physics]
 
 common/physics_ticks_per_second=120

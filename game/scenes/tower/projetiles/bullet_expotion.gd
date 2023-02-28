@@ -35,7 +35,7 @@ func _reset():
 		tween_explotion.kill()
 	
 	explotion_particles.lifetime = TIMELIFE
-	explotion_particles.visible = false
+	explotion_particles.visible = false #Костыль - НЕ ТРОГАТЬ!
 	
 	set_physics_process(true)
 	sprite.visible = true

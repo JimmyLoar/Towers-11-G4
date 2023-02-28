@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_ab4tp")
 _name = "Money"
-discription = ""
+discription = "Main resource your build and update tower
+"

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cprcy14k6dh78" path="res://game/scenes/tower/projetiles/bullet.tscn" id="2_v5nwu"]
 
 [node name="TowerWeaponObject" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_3wcxx")
 projectile_scene = ExtResource("2_v5nwu")
 
@@ -18,7 +19,7 @@ visible = false
 
 [node name="AmmoBox" type="Node2D" parent="."]
 show_behind_parent = true
-z_index = 100
+z_index = -1
 
 [node name="RechargeTimer" type="Timer" parent="."]
 wait_time = 0.5

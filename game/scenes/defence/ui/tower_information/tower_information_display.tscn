@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://djvws5mhfk6gf"]
+[gd_scene load_steps=6 format=3 uid="uid://djvws5mhfk6gf"]
 
 [ext_resource type="Texture2D" uid="uid://dw4asl67s2250" path="res://icon.svg" id="1_gerij"]
 [ext_resource type="Script" path="res://game/scenes/defence/ui/tower_information/tower_information_display.gd" id="1_tbxkw"]
 [ext_resource type="Script" path="res://game/scenes/defence/ui/tower_information/selling_bar.gd" id="2_bo7sg"]
 [ext_resource type="PackedScene" uid="uid://cubnomcgfay6e" path="res://game/scenes/defence/ui/tower_information/stat_display.tscn" id="3_87pql"]
+[ext_resource type="PackedScene" uid="uid://drav731knaome" path="res://game/scenes/defence/ui/tower_upgrade/upgrade_menu.tscn" id="4_emdwr"]
 
 [node name="InformationDisplay" type="PanelContainer"]
 clip_contents = true
@@ -14,13 +15,13 @@ anchor_bottom = 0.5
 offset_left = 8.0
 offset_top = -480.0
 offset_right = 409.0
-offset_bottom = 480.0
+offset_bottom = 530.0
 grow_vertical = 2
 size_flags_horizontal = 0
 script = ExtResource("1_tbxkw")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-custom_minimum_size = Vector2(390, 950)
+custom_minimum_size = Vector2(390, 1000)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -86,26 +87,8 @@ layout_mode = 2
 [node name="HSeparator5" type="HSeparator" parent="VBoxContainer/StatsMenu/StatContainer"]
 layout_mode = 2
 
-[node name="UpgradeMenu" type="MarginContainer" parent="VBoxContainer"]
+[node name="UpgradeMenu" parent="VBoxContainer" instance=ExtResource("4_emdwr")]
 layout_mode = 2
-theme_override_constants/margin_left = 2
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 2
-theme_override_constants/margin_bottom = 2
-
-[node name="Panel" type="Panel" parent="VBoxContainer/UpgradeMenu"]
-show_behind_parent = true
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/UpgradeMenu"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/UpgradeMenu"]
-layout_mode = 2
-size_flags_vertical = 1
-text = "It`s max grade"
-horizontal_alignment = 1
-vertical_alignment = 2
 
 [node name="SellingBar" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2

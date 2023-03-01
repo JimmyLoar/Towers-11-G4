@@ -8,7 +8,6 @@
 weapon_name = "TestWeapon"
 projectile_scene = ExtResource("2_v24ig")
 stat_base_damage = 5
-stat_firerate = 20.0
 stat_vision_range = 8.0
 stat_heating_power = 100
 

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcvpcy35mpops"]
+
+[ext_resource type="PackedScene" uid="uid://3v52ekqeexcn" path="res://game/scenes/tower/weapon/tweapon_dynamic.tscn" id="1_2oohc"]
+[ext_resource type="PackedScene" uid="uid://dgbfw0vgj3583" path="res://game/scenes/tower/projetiles/bullet_expotion.tscn" id="2_t6abp"]
+
+[node name="TowerWeaponDynamic" instance=ExtResource("1_2oohc")]
+weapon_name = "TestWeapon"
+projectile_scene = ExtResource("2_t6abp")
+stat_firerate = 1.0
+stat_heating_power = 25
+
+[node name="AmmoBox" parent="." index="2"]
+show_behind_parent = false

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TowerUpgrade" load_steps=2 format=3 uid="uid://ixa2vnwptdpd"]
+
+[ext_resource type="Script" path="res://game/classes/tower_upgrade.gd" id="1_8s1w7"]
+
+[resource]
+script = ExtResource("1_8s1w7")
+name = "Damage+"
+discription = ""
+stat_base_damage = 5
+stat_base_range = 5.0
+stat_base_firerate = 1.0

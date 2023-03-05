@@ -26,7 +26,6 @@ func _on_tower_focused(tower: TowerBody, focus: bool):
 		self.show()
 	
 	update_name(tower.get_object_name())
-	update_stats(tower.get_current_stats())
 
 
 func update_name(_name):

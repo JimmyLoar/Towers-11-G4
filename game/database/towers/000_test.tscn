@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" path="res://game/scenes/tower/tower_body.tscn" id="1_tbahv"]
 [ext_resource type="Script" path="res://game/classes/grid_structure.gd" id="2_6mclg"]
-[ext_resource type="PackedScene" uid="uid://p1326hkka77a" path="res://game/database/towers/weapons/000_00_test.tscn" id="2_csfa7"]
+[ext_resource type="PackedScene" uid="uid://1o76vytomwer" path="res://game/database/towers/weapons/000_00_test.tscn" id="2_csfa7"]
 
 [sub_resource type="Resource" id="Resource_5p1m7"]
 script = ExtResource("2_6mclg")

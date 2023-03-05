@@ -70,7 +70,6 @@ func _rotate_objects():
 	var degrees = 90 * rotate_side
 	if current_weapon:
 		current_weapon.rotation_degrees = degrees
-		current_weapon.set_target(Vector2.RIGHT.rotated(deg_to_rad(degrees)))
 	
 	sprite.rotation_degrees = degrees
 

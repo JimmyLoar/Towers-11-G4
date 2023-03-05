@@ -1,10 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://dgbfw0vgj3583"]
+[gd_scene load_steps=9 format=3 uid="uid://dgbfw0vgj3583"]
 
 [ext_resource type="PackedScene" uid="uid://cprcy14k6dh78" path="res://game/scenes/tower/projetiles/bullet.tscn" id="1_vh104"]
 [ext_resource type="Script" path="res://game/scenes/tower/projetiles/bullet_expotion.gd" id="2_sxpj4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kigv1"]
 radius = 100.0
+
+[sub_resource type="Gradient" id="Gradient_akxb6"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ive3a"]
+gradient = SubResource("Gradient_akxb6")
 
 [sub_resource type="Curve" id="Curve_4svrc"]
 _data = [Vector2(0, 0.530944), 0.0, 0.0, 0, 0, Vector2(0.812901, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -26,6 +32,8 @@ orbit_velocity_max = 0.0
 damping_min = 100.0
 damping_max = 100.0
 scale_curve = SubResource("CurveTexture_xer2h")
+color = Color(0.980392, 0.458824, 0.027451, 1)
+color_ramp = SubResource("GradientTexture1D_ive3a")
 
 [node name="BulletExpotion" instance=ExtResource("1_vh104")]
 position = Vector2(67, 69)

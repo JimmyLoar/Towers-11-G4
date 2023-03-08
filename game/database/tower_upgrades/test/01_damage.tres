@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="TowerUpgrade" load_steps=2 format=3 uid="uid://ixa2vnwptdpd"]
+
+[ext_resource type="Script" path="res://game/classes/tower_upgrade.gd" id="1_8s1w7"]
+
+[resource]
+script = ExtResource("1_8s1w7")
+name = "Damage"
+discription = ""
+prise = 100
+stat_base_damage = 5
+stat_base_range = 5.0
+stat_base_firerate = 1.0
+stat_projectiles_timelife = 0.0
+stat_projectiles_move_speed = 500
+stat_attribute_heating_power = 0.0
+stat_attribute_colding_power = 0.0
+stat_hitpoints_recovery = 0.0
+stat_hitpoints_selffire = 0.0
+other_projectiles_layers = 88
+other_hitscan_layers = 88

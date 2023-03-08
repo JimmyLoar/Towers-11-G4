@@ -18,7 +18,7 @@ func _draw() -> void:
 		return
 	
 	var pos = focused_tower.current_weapon.global_position
-	var vision_range = focused_tower.get_current_stat("vision_range") * CellObject.CELL_SIZE.x
+	var vision_range = focused_tower.get_currect_upgrade().stat_base_range * CellObject.CELL_SIZE.x 
 	var color = Color.WHITE_SMOKE
 	color.a = 0.25
 	draw_circle(pos, vision_range, color)

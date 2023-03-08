@@ -1,56 +1,46 @@
 class_name TowerBody
 extends CellObject
 
-@export var main_weapon_scene: PackedScene 
-
-var main_weapon : TWeaponObject
-
 var current_weapon: TWeaponObject 
 
 
 func _ready() -> void:
-	_init_weapons()
 	_rotate_objects()
+	apply_upgrade(_upgrade_main)
 	sprite.position -= self.center_offset
-	get_current_stats()
 
 
 func swap_weapon():
 	pass
 
 
-func get_current_stats() -> Dictionary:
-	var data := Dictionary()
-	if not current_weapon:
-		return data
-	
-	for property in current_weapon.get_property_list():
-		var stat_name : String = property.name
-		if not "stat_" in stat_name:
-			continue
-		var stat_key = stat_name.trim_prefix("stat_")
-		data[stat_key] = current_weapon.get(stat_name)
-	
-	return data
-
-
-func get_current_stat(stat_name: String):
-	var stats := self.get_current_stats()
-	if stats.has(stat_name):
-		return stats[stat_name]
-	
-	printerr("Tower '%s' | stat '%s' not exist\n Existed stats: %s" % stats)
-	print_stack()
+func get_current_stat(stat_name: String): 
+	#Незабыть удалить, после изменения в "res://game/scenes/defence/objects_manager.gd", 21 сторока
 	return 0
+
+
+func apply_upgrade(upgrade: TowerUpgrade):
+	if not upgrade:
+		printerr("Tower %s | can not apply upgrade, upgrade not exist")
+		print_stack()
+		print()
+		return
 	
-
-
-func _init_weapons():
-	main_weapon = _init_weapon(main_weapon_scene)
-	main_weapon.position -= self.center_offset
-	if not current_weapon:
-		current_weapon = main_weapon
-		self.add_child(current_weapon)
+	if upgrade.weapon:
+		if current_weapon:
+			self.remove_child(current_weapon)
+		
+		current_weapon = upgrade.weapon.instantiate()
+		
+		var size = self.structure.get_size()
+		var offset = Vector2.ZERO
+		offset.x = 0.5 if fmod(size.x, 2) == 0 else 0.0
+		offset.y = 0.5 if fmod(size.y, 2) == 0 else 0.0
+		current_weapon.position = -offset * CellObject.CELL_SIZE 
+		self.add_child(current_weapon) 
+	
+	var stats = upgrade.get_stats()
+	current_weapon.set_stats(stats)
 
 
 func _init_weapon(_scene: PackedScene) -> TWeaponObject:
@@ -72,4 +62,5 @@ func _rotate_objects():
 		current_weapon.rotation_degrees = degrees
 	
 	sprite.rotation_degrees = degrees
+
 

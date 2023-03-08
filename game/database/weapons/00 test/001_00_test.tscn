@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfi5s484oh5iu"]
+
+[ext_resource type="PackedScene" uid="uid://dbg8wgfifvn5x" path="res://game/scenes/tower/weapon/tweapon_projectile.tscn" id="1_konel"]
+[ext_resource type="Texture2D" uid="uid://dl72be2fy8aob" path="res://assets/sprites/towers/weapons/cannon normal/turret_02_01.png" id="2_wq3ms"]
+
+[node name="TowerWeaponDynamic" instance=ExtResource("1_konel")]
+weapon_name = "TestWeapon"
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_wq3ms")
+
+[node name="AmmoBox" parent="." index="2"]
+show_behind_parent = false
+
+[connection signal="area_entered" from="VisionArea" to="." method="_on_vision_area_entered" flags=18]
+[connection signal="area_exited" from="VisionArea" to="." method="_on_vision_area_exited" flags=18]

@@ -8,6 +8,7 @@ var focus_tower : TowerBody
 
 @onready var name_label: Label = $VBoxContainer/NameLabel
 @onready var stat_container: VBoxContainer = $VBoxContainer/StatsMenu/StatContainer
+@onready var upgrade_menu: MarginContainer = $VBoxContainer/UpgradeMenu
 
 
 
@@ -26,7 +27,9 @@ func _on_tower_focused(tower: TowerBody, focus: bool):
 		self.show()
 	
 	update_name(tower.get_object_name())
-	update_stats(tower.get_current_stats())
+	var upgrade := tower.get_currect_upgrade()
+	update_stats(upgrade.get_stats())
+	upgrade_menu.update_upgrades(tower)
 
 
 func update_name(_name):
@@ -55,7 +58,10 @@ func add_stat_display(count: int):
 func remove_stats_display(count: int):
 	for _i in count:
 		stat_container.get_child(0).queue_free()
+		stat_container.remove_child(stat_container.get_child(0))
+		
 		stat_container.get_child(0).queue_free()
+		stat_container.remove_child(stat_container.get_child(0))
 
 
 func update_stat_display(stats: Dictionary):

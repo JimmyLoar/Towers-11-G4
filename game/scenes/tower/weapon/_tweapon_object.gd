@@ -9,13 +9,15 @@ enum AimMode {FIRST, LAST, CLOSE, FAR, WEAK, STRONG, RANDOM}
 
 @export_group("TowerUpgrades", "upgrade_")
 
-@export_group("WeaponStats", "stat_")
-@export_range(0, 1024, 1, "or_greater") var stat_base_damage: int = 1
-@export_range(0.0, 100.0, 0.01) var stat_firerate: float = 1.0
-@export_range(0.0, 16.0, 0.1, "or_greater") var stat_vision_range: float = 4.0
 
-@export_range(0, 256, 1, "or_greater") var stat_heating_power: int = 0
-@export_range(0, 256, 1, "or_greater") var stat_colding_power: int = 0
+var base_damage: int = 1
+var base_firerate: float = 1.0
+var base_range: float = 4.0 : set = set_range
+
+var projectiles_move_speed := 500.0
+
+var heating_power: int = 0
+var colding_power: int = 0
 
 var current_target : EnemyObject
 var _enemies_in_area := []
@@ -34,11 +36,13 @@ func _init():
 
 
 func _ready() -> void:
-	vision_area.connect("area_entered", _on_vision_area_entered)
-	vision_area.connect("area_exited", _on_vision_area_exited)
+	if not vision_area.is_connected("area_entered", _on_vision_area_entered):
+		vision_area.connect("area_entered", _on_vision_area_entered)
+	if not vision_area.is_connected("area_exited", _on_vision_area_exited):
+		vision_area.connect("area_exited", _on_vision_area_exited)
 	
-	if vision_shape.shape is CircleShape2D:
-		vision_shape.shape.radius = stat_vision_range * CellObject.CELL_SIZE.x
+	vision_shape.shape = CircleShape2D.new()
+	set_range(base_range)
 
 
 func _process(delta) -> void:
@@ -48,12 +52,15 @@ func _process(delta) -> void:
 	select_target()
 
 
-func get_main_texture():
-	return sprite.texture
+func attack():
+	pass
 
 
 func select_target():
 	if not current_target:
+		if _enemies_in_area.is_empty():
+			return
+		
 		set_target(_enemies_in_area[0])
 		return
 	
@@ -104,15 +111,21 @@ func get_target():
 	return current_target
 
 
-func attack():
-	pass
+func get_main_texture():
+	return sprite.texture
 
 
-func _found_target(enemy : EnemyObject):
-	pass
+func set_range(value: float):
+	base_range = value
+	self.vision_shape.shape.radius = value * CellObject.CELL_SIZE.x
+	
+
+func set_stats(stats: Dictionary):
+	for key in stats.keys():
+		self.set(key, stats[key])
 
 
-func _lost_target(enemy : EnemyObject):
+func _lost_target(enemy : EnemyObject): #Delete
 	pass
 
 
@@ -139,7 +152,7 @@ func _connect_projectile(projectile: MainProjectile):
 
 
 func _apply_temperature_power(enemy: EnemyObject):
-	var temperature_power = stat_heating_power - stat_colding_power
+	var temperature_power = heating_power - colding_power
 	if temperature_power > 0:
 		enemy.increase_heat(temperature_power)
 	
@@ -148,8 +161,8 @@ func _apply_temperature_power(enemy: EnemyObject):
 
 
 func _on_projectile_hited(enemy: EnemyObject, projectile: MainProjectile = null):
-	if stat_base_damage > 0:
-		enemy.take_damage(stat_base_damage)
+	if base_damage > 0:
+		enemy.take_damage(base_damage)
 	
 	_apply_temperature_power(enemy)
 
@@ -174,7 +187,7 @@ func _on_vision_area_entered(area: Area2D) -> void:
 	if not _enemies_in_area.has(enemy):
 		_enemies_in_area.append(enemy)
 	
-	_found_target(enemy)
+	select_target()
 
 
 func _on_vision_area_exited(area: Area2D) -> void:
@@ -185,4 +198,5 @@ func _on_vision_area_exited(area: Area2D) -> void:
 	if _enemies_in_area.has(enemy):
 		_enemies_in_area.erase(enemy)
 	
-	_lost_target(enemy)
+	current_target = null
+	select_target()

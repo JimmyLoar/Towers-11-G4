@@ -29,6 +29,12 @@ const CORNERS_OFFSET = [
 @export var main_icon : Texture
 @export var structure : GridStructure
 
+@export_group("Upgrades", "_upgrade")
+@export var _upgrade_main: TowerUpgrade
+@export var _upgrade_resources: Array[TowerUpgrade] = []
+@export var _upgrade_structure: Array[String] = []
+@export var _upgrade_level := String()
+
 @export_group("Flags", "_flag")
 @export var _flag_painting_cells: bool = false
 @export var _flag_painting_outline: bool = false
@@ -40,6 +46,7 @@ var _rotated_structure := PackedVector2Array()
 var _outline_positions := PackedVector2Array()
 var _disabled := false
 var _outline_cache := []
+
 @onready var shape = $Shape
 @onready var sprite: Sprite2D = $Sprite
 
@@ -167,8 +174,6 @@ func get_cell_position() -> Vector2:
 
 func get_global_cell_position():
 	return convert_position_to_cell(self.global_position)
-	
-
 
 
 static func round_position(value: Vector2, is_mouse := false) -> Vector2:
@@ -181,6 +186,45 @@ static func round_position(value: Vector2, is_mouse := false) -> Vector2:
 
 static func convert_position_to_cell(convert_position: Vector2) -> Vector2:
 	return (convert_position / CELL_SIZE).floor()
+
+
+func get_upgrade_indexs(level: String = _upgrade_level) -> Array:
+	var indexs := Array()
+	
+	for key in _upgrade_structure:
+		if key.length() - 1 != level.length() or not key.begins_with(level):
+			continue
+		
+		var index = _upgrade_structure.find(key)
+		indexs.append(index)
+	
+	return indexs
+
+
+func get_upgrade(index: int):
+	if _upgrade_resources.is_empty():
+		return _upgrade_main
+	
+	index = wrapi(index, 0, _upgrade_resources.size())
+	return _upgrade_resources[index]
+
+
+func get_currect_upgrade() -> TowerUpgrade:
+	var index = _upgrade_structure.find(_upgrade_level)
+	if index == -1:
+		return _upgrade_main
+	return _upgrade_resources[index]
+
+
+func apply_upgrade(upgrade: TowerUpgrade):
+	pass
+
+
+func upgrade_selecte(ind: int):
+	var index = self.get_upgrade_indexs()[ind]
+	var upgrade = self.get_upgrade(index)
+	self._upgrade_level = _upgrade_structure[index]
+	self.apply_upgrade(upgrade)
 
 
 func _rotate_objects():

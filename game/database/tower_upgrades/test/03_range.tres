@@ -6,6 +6,7 @@
 script = ExtResource("1_u0u33")
 name = "Range"
 discription = ""
+prise = 200
 stat_base_damage = 1
 stat_base_range = 8.0
 stat_base_firerate = 1.0

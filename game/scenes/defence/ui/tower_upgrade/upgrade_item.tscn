@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dc4l8xoctob6n"]
+[gd_scene load_steps=5 format=3 uid="uid://dc4l8xoctob6n"]
 
 [ext_resource type="Texture2D" uid="uid://dw4asl67s2250" path="res://icon.svg" id="1_pxvfn"]
 [ext_resource type="Script" path="res://game/scenes/defence/ui/tower_upgrade/upgrade_item.gd" id="1_x5yt0"]
@@ -19,6 +19,10 @@ expand_margin_left = 2.0
 expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_yl0sf"]
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
 
 [node name="UpgradeItem" type="PanelContainer"]
 offset_right = 339.0
@@ -43,6 +47,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 12
 text = "Name"
+label_settings = SubResource("LabelSettings_yl0sf")
 vertical_alignment = 1
 autowrap_mode = 2
 

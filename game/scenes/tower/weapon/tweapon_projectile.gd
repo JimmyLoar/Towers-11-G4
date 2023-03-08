@@ -25,9 +25,8 @@ func attack():
 		
 	else:
 		ammo_box.add_child(projectile)
-		
 		projectile.set_transform(sprite.get_transform())
-		projectile.launch(1500)
+		projectile.launch(projectiles_move_speed)
 		
-	recharge_timer.start(1 / stat_firerate)
+	recharge_timer.start(1 / base_firerate)
 

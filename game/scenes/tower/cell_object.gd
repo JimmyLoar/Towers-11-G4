@@ -202,6 +202,9 @@ func get_upgrade_indexs(level: String = _upgrade_level) -> Array:
 
 
 func get_upgrade(index: int):
+	if _upgrade_resources.is_empty():
+		return _upgrade_main
+	
 	index = wrapi(index, 0, _upgrade_resources.size())
 	return _upgrade_resources[index]
 
@@ -215,6 +218,13 @@ func get_currect_upgrade() -> TowerUpgrade:
 
 func apply_upgrade(upgrade: TowerUpgrade):
 	pass
+
+
+func upgrade_selecte(ind: int):
+	var index = self.get_upgrade_indexs()[ind]
+	var upgrade = self.get_upgrade(index)
+	self._upgrade_level = _upgrade_structure[index]
+	self.apply_upgrade(upgrade)
 
 
 func _rotate_objects():

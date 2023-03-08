@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://bx3egceyac28"]
+[gd_scene load_steps=6 format=3 uid="uid://bx3egceyac28"]
 
 [ext_resource type="Script" path="res://game/scenes/level_display/level_display.gd" id="1_mphe7"]
 [ext_resource type="TileSet" uid="uid://danwtocvbryl5" path="res://game/resources/tile set/levels_tileset.tres" id="2_h4lt5"]
 [ext_resource type="Script" path="res://game/scenes/level_display/enemies_path.gd" id="3_henll"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_nsnuk"]
+device = -1
+keycode = 32
+unicode = 32
+
+[sub_resource type="Shortcut" id="Shortcut_ldp6r"]
+events = [SubResource("InputEventKey_nsnuk")]
 
 [node name="LevelDisplay" type="Node2D"]
 script = ExtResource("1_mphe7")
@@ -58,6 +66,7 @@ offset_right = 1904.0
 offset_bottom = 1065.0
 grow_horizontal = 2
 grow_vertical = 2
+shortcut = SubResource("Shortcut_ldp6r")
 text = "Start Wave"
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

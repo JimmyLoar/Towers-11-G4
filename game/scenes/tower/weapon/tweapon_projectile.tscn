@@ -10,11 +10,6 @@ radius = 480.0
 script = ExtResource("2_my2s5")
 rotate_max_speed = 3.14159
 aim_mode = 2
-stat_base_damage = 2
-stat_firerate = 5.0
-stat_vision_range = 6.0
-stat_heating_power = 150
-stat_colding_power = null
 
 [node name="Sprite" parent="." index="0"]
 texture_filter = 1

@@ -1,4 +1,3 @@
-@tool
 class_name TowerUpgrade
 extends Resource
 
@@ -6,16 +5,17 @@ extends Resource
 @export_placeholder("UpgradeDiscriptionKey") var discription := ""
 @export var weapon: PackedScene
 @export var projectile: PackedScene
+@export_range(0, 100, 1, "or_greater") var prise := 0
 
 @export_group("Stats", "stat_")
 @export_subgroup("Base", "stat_base_")
 @export_range(0, 100, 1, "or_greater") var stat_base_damage: int = 1
 @export_range(0, 16.0, 0.1, "or_greater") var stat_base_range: float = 1.0
-@export_range(0, 100, 1, "or_greater") var stat_base_firerate: float = 1.0
+@export_range(0.01, 10.0, 0.01, "or_greater") var stat_base_firerate: float = 1.0
 
 @export_subgroup("Projectiles", "stat_projectiles")
 @export_range(0.0, 5.0, 0.1, "or_greater") var stat_projectiles_timelife := 0.0
-@export_range(0, 1500, 1, "or_greater") var stat_projectiles_move_speed := 500 
+@export_range(0, 1500, 1, "or_greater") var stat_projectiles_move_speed := 1500 
 
 @export_subgroup("Hitscan", "stat_hitscan")
 

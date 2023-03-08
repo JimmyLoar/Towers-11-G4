@@ -13,7 +13,6 @@ projectile_scene = ExtResource("2_v5nwu")
 texture = ExtResource("2_r5n07")
 
 [node name="VisionArea" type="Area2D" parent="."]
-visible = false
 
 [node name="Collision" type="CollisionShape2D" parent="VisionArea"]
 

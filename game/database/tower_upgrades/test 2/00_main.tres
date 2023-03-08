@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="TowerUpgrade" load_steps=4 format=3 uid="uid://dae05fq4seahl"]
+
+[ext_resource type="PackedScene" uid="uid://cprcy14k6dh78" path="res://game/scenes/tower/projetiles/bullet.tscn" id="1_6jlc7"]
+[ext_resource type="Script" path="res://game/classes/tower_upgrade.gd" id="2_nvqlw"]
+[ext_resource type="PackedScene" uid="uid://cfi5s484oh5iu" path="res://game/database/weapons/00 test/001_00_test.tscn" id="3_bwhlx"]
+
+[resource]
+script = ExtResource("2_nvqlw")
+name = "Main"
+discription = ""
+weapon = ExtResource("3_bwhlx")
+projectile = ExtResource("1_6jlc7")
+prise = 0
+stat_base_damage = 2
+stat_base_range = 6.0
+stat_base_firerate = 0.5
+stat_projectiles_timelife = 0.0
+stat_projectiles_move_speed = 500
+stat_attribute_heating_power = 0.0
+stat_attribute_colding_power = 0.0
+stat_hitpoints_recovery = 0.0
+stat_hitpoints_selffire = 0.0
+other_projectiles_layers = 88
+other_hitscan_layers = 88

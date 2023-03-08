@@ -31,14 +31,16 @@ func apply_upgrade(upgrade: TowerUpgrade):
 			self.remove_child(current_weapon)
 		
 		current_weapon = upgrade.weapon.instantiate()
-		self.add_child(current_weapon)
+		
+		var size = self.structure.get_size()
+		var offset = Vector2.ZERO
+		offset.x = 0.5 if fmod(size.x, 2) == 0 else 0.0
+		offset.y = 0.5 if fmod(size.y, 2) == 0 else 0.0
+		current_weapon.position = -offset * CellObject.CELL_SIZE 
+		self.add_child(current_weapon) 
 	
 	var stats = upgrade.get_stats()
 	current_weapon.set_stats(stats)
-	
-	
-
-
 
 
 func _init_weapon(_scene: PackedScene) -> TWeaponObject:

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://drav731knaome"]
 
-[ext_resource type="PackedScene" uid="uid://dc4l8xoctob6n" path="res://game/scenes/defence/ui/tower_upgrade/upgrade_item.tscn" id="1_080bf"]
+[ext_resource type="Script" path="res://game/scenes/defence/ui/tower_upgrade/upgrade_menu.gd" id="1_7jo3c"]
 
 [node name="UpgradeMenu" type="MarginContainer"]
 custom_minimum_size = Vector2(230, 20)
@@ -10,6 +10,7 @@ theme_override_constants/margin_left = 2
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
+script = ExtResource("1_7jo3c")
 
 [node name="Panel" type="Panel" parent="."]
 show_behind_parent = true
@@ -22,18 +23,10 @@ alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Upgrads"
+text = "Upgrades"
 horizontal_alignment = 1
 vertical_alignment = 2
-
-[node name="UpgradeItem" parent="VBoxContainer" instance=ExtResource("1_080bf")]
-layout_mode = 2
-
-[node name="UpgradeItem2" parent="VBoxContainer" instance=ExtResource("1_080bf")]
-layout_mode = 2
-
-[node name="UpgradeItem3" parent="VBoxContainer" instance=ExtResource("1_080bf")]
-layout_mode = 2
+language = "en"
 
 [node name="Label" type="Label" parent="."]
 visible = false

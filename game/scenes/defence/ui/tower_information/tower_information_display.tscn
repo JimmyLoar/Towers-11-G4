@@ -25,6 +25,7 @@ custom_minimum_size = Vector2(390, 1000)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 6
 
 [node name="NameLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -61,30 +62,6 @@ theme_override_constants/separation = 6
 layout_mode = 2
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer/StatsMenu/StatContainer"]
-layout_mode = 2
-
-[node name="StatDisplay2" parent="VBoxContainer/StatsMenu/StatContainer" instance=ExtResource("3_87pql")]
-layout_mode = 2
-
-[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/StatsMenu/StatContainer"]
-layout_mode = 2
-
-[node name="StatDisplay3" parent="VBoxContainer/StatsMenu/StatContainer" instance=ExtResource("3_87pql")]
-layout_mode = 2
-
-[node name="HSeparator3" type="HSeparator" parent="VBoxContainer/StatsMenu/StatContainer"]
-layout_mode = 2
-
-[node name="StatDisplay4" parent="VBoxContainer/StatsMenu/StatContainer" instance=ExtResource("3_87pql")]
-layout_mode = 2
-
-[node name="HSeparator4" type="HSeparator" parent="VBoxContainer/StatsMenu/StatContainer"]
-layout_mode = 2
-
-[node name="StatDisplay5" parent="VBoxContainer/StatsMenu/StatContainer" instance=ExtResource("3_87pql")]
-layout_mode = 2
-
-[node name="HSeparator5" type="HSeparator" parent="VBoxContainer/StatsMenu/StatContainer"]
 layout_mode = 2
 
 [node name="UpgradeMenu" parent="VBoxContainer" instance=ExtResource("4_emdwr")]

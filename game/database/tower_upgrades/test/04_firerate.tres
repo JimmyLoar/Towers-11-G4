@@ -4,8 +4,9 @@
 
 [resource]
 script = ExtResource("1_5m3pf")
-name = "Damage+"
+name = "Firerate +"
 discription = ""
+prise = 600
 stat_base_damage = 1
 stat_base_range = 5.0
 stat_base_firerate = 4.0

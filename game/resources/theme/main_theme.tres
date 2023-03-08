@@ -15,5 +15,5 @@ thickness = 2
 [resource]
 default_font = ExtResource("1_rb7yf")
 default_font_size = 16
-HSeparator/constants/separation = 4
+HSeparator/constants/separation = -6
 HSeparator/styles/separator = SubResource("StyleBoxLine_wgmug")

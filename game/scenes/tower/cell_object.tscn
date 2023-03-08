@@ -17,6 +17,7 @@ input_pickable = true
 physics_material_override = SubResource("PhysicsMaterial_qiqrx")
 script = ExtResource("1_qm6lk")
 structure = SubResource("Resource_km2cx")
+_upgrade_structure = Array[String](["a", "b", "aa"])
 
 [node name="Shape" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(0, 0, 0, 0, 0, 0)

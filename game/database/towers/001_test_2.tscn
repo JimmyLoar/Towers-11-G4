@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b21ur0jprtdox"]
+[gd_scene load_steps=5 format=3 uid="uid://b21ur0jprtdox"]
 
-[ext_resource type="PackedScene" path="res://game/scenes/tower/tower_body.tscn" id="1_sxwyf"]
+[ext_resource type="PackedScene" uid="uid://bn5v3w1fmxoa" path="res://game/scenes/tower/tower_body.tscn" id="1_sxwyf"]
 [ext_resource type="Texture2D" uid="uid://buwsh6aw30v4w" path="res://assets/sprites/towers/icons/cannon 2.png" id="2_keusm"]
-[ext_resource type="PackedScene" uid="uid://diu8v5x0sibju" path="res://game/database/towers/weapons/001_00_test.tscn" id="2_y8bjr"]
 [ext_resource type="Script" path="res://game/classes/grid_structure.gd" id="4_ssb8n"]
 
 [sub_resource type="Resource" id="Resource_fsab4"]
@@ -10,7 +9,6 @@ script = ExtResource("4_ssb8n")
 _main_structure = PackedVector2Array(0, 0, 1, 0, 1, 1, 0, 1)
 
 [node name="TowerBody" instance=ExtResource("1_sxwyf")]
-main_weapon_scene = ExtResource("2_y8bjr")
 object_name = "Test Tower 2"
 main_icon = ExtResource("2_keusm")
 structure = SubResource("Resource_fsab4")

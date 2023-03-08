@@ -9,13 +9,13 @@ enum AimMode {FIRST, LAST, CLOSE, FAR, WEAK, STRONG, RANDOM}
 
 @export_group("TowerUpgrades", "upgrade_")
 
-@export_group("WeaponStats", "stat_")
-@export_range(0, 1024, 1, "or_greater") var stat_base_damage: int = 1
-@export_range(0.0, 100.0, 0.01) var stat_firerate: float = 1.0
-@export_range(0.0, 16.0, 0.1, "or_greater") var stat_vision_range: float = 4.0
 
-@export_range(0, 256, 1, "or_greater") var stat_heating_power: int = 0
-@export_range(0, 256, 1, "or_greater") var stat_colding_power: int = 0
+var stat_base_damage: int = 1
+var stat_firerate: float = 1.0
+var stat_vision_range: float = 4.0
+
+var stat_heating_power: int = 0
+var stat_colding_power: int = 0
 
 var current_target : EnemyObject
 var _enemies_in_area := []
@@ -48,8 +48,8 @@ func _process(delta) -> void:
 	select_target()
 
 
-func get_main_texture():
-	return sprite.texture
+func attack():
+	pass
 
 
 func select_target():
@@ -104,15 +104,33 @@ func get_target():
 	return current_target
 
 
-func attack():
+func get_main_texture():
+	return sprite.texture
+
+
+func set_stats(stats: Dictionary):
+	_update_base_stats(stats)
+	_update_projectiles_stats(stats)
+	_update_attirute_stats(stats)
+
+
+func _update_base_stats(stats: Dictionary):
 	pass
 
 
-func _found_target(enemy : EnemyObject):
+func _update_projectiles_stats(stats: Dictionary):
 	pass
 
 
-func _lost_target(enemy : EnemyObject):
+func _update_attirute_stats(stats: Dictionary):
+	pass
+
+
+func _found_target(enemy : EnemyObject): #Delete
+	pass
+
+
+func _lost_target(enemy : EnemyObject): #Delete
 	pass
 
 

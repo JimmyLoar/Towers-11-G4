@@ -25,7 +25,10 @@ func _on_tower_focused(tower: TowerBody, focus: bool):
 	if not self.visible:
 		self.show()
 	
+	
 	update_name(tower.get_object_name())
+	var upgrade := tower.get_currect_upgrade()
+	update_stats(upgrade.get_stats())
 
 
 func update_name(_name):
@@ -54,7 +57,10 @@ func add_stat_display(count: int):
 func remove_stats_display(count: int):
 	for _i in count:
 		stat_container.get_child(0).queue_free()
+		stat_container.remove_child(stat_container.get_child(0))
+		
 		stat_container.get_child(0).queue_free()
+		stat_container.remove_child(stat_container.get_child(0))
 
 
 func update_stat_display(stats: Dictionary):

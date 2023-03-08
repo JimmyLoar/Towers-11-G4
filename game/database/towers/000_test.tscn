@@ -1,14 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://vsymayfoeryw"]
+[gd_scene load_steps=8 format=3 uid="uid://vsymayfoeryw"]
 
-[ext_resource type="PackedScene" path="res://game/scenes/tower/tower_body.tscn" id="1_tbahv"]
+[ext_resource type="PackedScene" uid="uid://bn5v3w1fmxoa" path="res://game/scenes/tower/tower_body.tscn" id="1_tbahv"]
 [ext_resource type="Script" path="res://game/classes/grid_structure.gd" id="2_6mclg"]
-[ext_resource type="PackedScene" uid="uid://1o76vytomwer" path="res://game/database/towers/weapons/000_00_test.tscn" id="2_csfa7"]
+[ext_resource type="Resource" uid="uid://ixa2vnwptdpd" path="res://game/database/tower_upgrades/test/01_damage.tres" id="5_qu2jy"]
+[ext_resource type="Resource" uid="uid://c2veo0f3a0umi" path="res://game/database/tower_upgrades/test/03_range.tres" id="6_6gx1e"]
+[ext_resource type="Resource" uid="uid://bjvl732vb4hcn" path="res://game/database/tower_upgrades/test/02_firerate.tres" id="7_rwg8a"]
+[ext_resource type="Resource" uid="uid://xc2m4bgmjnlc" path="res://game/database/tower_upgrades/test/04_firerate.tres" id="8_4p063"]
 
 [sub_resource type="Resource" id="Resource_5p1m7"]
 script = ExtResource("2_6mclg")
 _main_structure = PackedVector2Array(0, 0)
 
 [node name="TestTower" instance=ExtResource("1_tbahv")]
-main_weapon_scene = ExtResource("2_csfa7")
 object_name = "Test Tower 1"
 structure = SubResource("Resource_5p1m7")
+_upgrade_resources = Array[Resource("res://game/classes/tower_upgrade.gd")]([ExtResource("5_qu2jy"), ExtResource("6_6gx1e"), ExtResource("7_rwg8a"), ExtResource("8_4p063")])
+_upgrade_structure = Array[String](["a", "b", "c", "ca"])

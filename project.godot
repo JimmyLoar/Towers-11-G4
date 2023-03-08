@@ -23,6 +23,7 @@ GlobalData="*res://game/singletones/global_data.gd"
 Levels="*res://game/singletones/managers/level_manager.gd"
 Towers="*res://game/singletones/managers/tower_manager.gd"
 Enemies="*res://game/singletones/managers/enemy_manager.gd"
+LocalizationManager="*res://addons/localization_editor/LocalizationManager.gd"
 
 [display]
 
@@ -33,6 +34,10 @@ window/size/window_width_override=1280
 window/size/window_height_override=720
 window/per_pixel_transparency/allowed=true
 window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/localization_editor/plugin.cfg")
 
 [gui]
 

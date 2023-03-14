@@ -24,6 +24,7 @@ const CORNERS_OFFSET = [
 
 #@export_group("Ojbect", "object")
 @export_placeholder("Name") var object_name: String = ""
+@export_range(0, 100, 1, "or_greater") var build_prise = 100
 
 @export_group("Textures", "textures_")
 @export var main_icon : Texture

@@ -1,12 +1,12 @@
 extends Button
 
-@export var test_prise := 10
+@export var prise := 10
 @export var texture_file : Texture
 
 @onready var icon_texture: TextureRect = $VBoxContainer/IconTexture
 @onready var num_indicate: Label = $VBoxContainer/IconTexture/NumIndicate
-@onready var prise_label: Label = $VBoxContainer/Prise
 
+@onready var resource_display: PanelContainer = $ResourceDisplay
 
 
 func _init():
@@ -24,6 +24,8 @@ func _ready():
 	event.keycode = 49 + index
 	self.shortcut = Shortcut.new()
 	self.shortcut.events.append(event)
+	
+	EventBus.ui_resource_value_changed.connect(check_on_enough_value)
 
 
 
@@ -31,4 +33,17 @@ func _update(tower: TowerBody):
 	icon_texture.texture = tower.get_icon()
 
 
+func set_prise(value):
+	prise = value
+	resource_display.set_prise(prise)
+
+
+func check_on_enough_value(type, check):
+	if prise > check:
+		self.disabled = true
+		resource_display.modulate = Color.GRAY
+	
+	else:
+		self.disabled = false
+		resource_display.modulate = Color.WHITE
 

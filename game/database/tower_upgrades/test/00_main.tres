@@ -10,6 +10,7 @@ name = "Main"
 discription = ""
 weapon = ExtResource("2_6oxpt")
 projectile = ExtResource("1_63yuw")
+prise = 0
 stat_base_damage = 1
 stat_base_range = 5.0
 stat_base_firerate = 1.0

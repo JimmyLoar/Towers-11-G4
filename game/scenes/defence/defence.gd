@@ -20,6 +20,7 @@ func _ready() -> void:
 	self.add_child(active_object)
 	active_object.modulate = Color(1, 1, 1, 0)
 	init_level()
+	GlobalData.set_resource_value(GlobalData.ResourcesType.PLAYER_LIFE, 25)
 
 
 func init_level():

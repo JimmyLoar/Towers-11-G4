@@ -1,16 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://i17tol7rfss4"]
+[gd_scene load_steps=4 format=3 uid="uid://i17tol7rfss4"]
 
 [ext_resource type="PackedScene" uid="uid://d3ad5fq0ih4y4" path="res://game/scenes/defence/ui/tower_selecter/selecter_item.tscn" id="1_j375g"]
 [ext_resource type="Script" path="res://game/scenes/defence/ui/tower_selecter/tower_selecter.gd" id="1_kqvum"]
 [ext_resource type="Texture2D" uid="uid://dw4asl67s2250" path="res://icon.svg" id="3_e33mn"]
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_vnuw7"]
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_cr1th"]
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_m1pt3"]
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_ssprq"]
 
 [node name="TowerSelecter" type="HBoxContainer"]
 offset_left = 6.0
@@ -28,7 +20,6 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="BuildButtons" type="HBoxContainer" parent="BG"]
-clip_contents = true
 custom_minimum_size = Vector2(492, 44)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -37,21 +28,18 @@ theme_override_constants/separation = 4
 
 [node name="SelecterItem" parent="BG/BuildButtons" instance=ExtResource("1_j375g")]
 layout_mode = 2
-button_group = SubResource("ButtonGroup_vnuw7")
 
 [node name="SelecterItem2" parent="BG/BuildButtons" instance=ExtResource("1_j375g")]
 layout_mode = 2
-button_group = SubResource("ButtonGroup_cr1th")
 
 [node name="SelecterItem3" parent="BG/BuildButtons" instance=ExtResource("1_j375g")]
 layout_mode = 2
-button_group = SubResource("ButtonGroup_m1pt3")
 
 [node name="SelecterItem4" parent="BG/BuildButtons" instance=ExtResource("1_j375g")]
 layout_mode = 2
-button_group = SubResource("ButtonGroup_ssprq")
 
 [node name="ClearItem" type="Button" parent="."]
+visible = false
 modulate = Color(1, 1, 0.972549, 1)
 custom_minimum_size = Vector2(120, 44)
 layout_mode = 2

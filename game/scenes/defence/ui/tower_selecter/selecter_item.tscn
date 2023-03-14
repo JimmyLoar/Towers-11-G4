@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3ad5fq0ih4y4"]
+[gd_scene load_steps=7 format=3 uid="uid://d3ad5fq0ih4y4"]
 
 [ext_resource type="Script" path="res://game/scenes/defence/ui/tower_selecter/selecter_item.gd" id="1_uivdh"]
 [ext_resource type="Texture2D" uid="uid://dw4asl67s2250" path="res://icon.svg" id="1_xxxa8"]
 [ext_resource type="FontFile" uid="uid://v76f8dvtdpqj" path="res://assets/fonts/press_start_2p-regular.ttf" id="2_u1xt2"]
+[ext_resource type="PackedScene" uid="uid://ddtr5rv7asbxy" path="res://game/scenes/ui/resources display/resources_display.tscn" id="4_pmvkn"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_jonyb"]
 keycode = 52
@@ -12,7 +13,7 @@ events = [SubResource("InputEventKey_jonyb")]
 
 [node name="SelecterItem" type="Button"]
 custom_minimum_size = Vector2(120, 44)
-offset_right = 40.0
+offset_right = 120.0
 offset_bottom = 44.0
 size_flags_horizontal = 3
 focus_mode = 0
@@ -21,7 +22,8 @@ shortcut_in_tooltip = false
 script = ExtResource("1_uivdh")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -44,16 +46,29 @@ stretch_mode = 5
 layout_mode = 0
 offset_left = 2.0
 offset_top = 3.0
-offset_right = 42.0
+offset_right = 37.0
 offset_bottom = 19.0
 
-[node name="Prise" type="Label" parent="VBoxContainer"]
+[node name="Prise" type="Label" parent="VBoxContainer/IconTexture"]
 visible = false
 layout_mode = 2
+offset_top = 28.0
+offset_right = 120.0
+offset_bottom = 44.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("2_u1xt2")
 theme_override_font_sizes/font_size = 13
-text = "$99999999"
-horizontal_alignment = 1
+text = "9999"
+horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="ResourceDisplay" parent="." instance=ExtResource("4_pmvkn")]
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = 51.0
+offset_right = 120.0
+offset_bottom = 71.0
+mouse_filter = 2

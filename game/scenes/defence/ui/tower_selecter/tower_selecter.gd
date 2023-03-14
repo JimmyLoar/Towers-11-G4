@@ -50,7 +50,10 @@ func _update_items():
 	for child in build_buttons.get_children():
 		if not child.is_connected("pressed", Callable(self, "_pressed_button")):
 			child.pressed.connect(_pressed_button.bind(child.get_index()))
-	
+		
+		var tower_index = GlobalData.towers_selected[child.get_index()]
+		var tower: TowerBody = Towers.get_instanced_object(tower_index)
+		child.set_prise(tower.build_prise)
 
 
 func _pressed_button(index):
@@ -59,7 +62,6 @@ func _pressed_button(index):
 		send_value = -1
 	
 	emit_signal("tower_selected", send_value)
-
 
 
 func _on_toggle_button_pressed() -> void:

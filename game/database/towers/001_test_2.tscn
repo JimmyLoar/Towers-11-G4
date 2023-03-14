@@ -11,6 +11,7 @@ _main_structure = PackedVector2Array(0, 0, 1, 0, 1, 1, 0, 1)
 
 [node name="TowerBody" instance=ExtResource("1_sxwyf")]
 object_name = "Test Tower 2"
+build_prise = 300
 main_icon = ExtResource("2_keusm")
 structure = SubResource("Resource_fsab4")
 _upgrade_main = ExtResource("4_da10q")

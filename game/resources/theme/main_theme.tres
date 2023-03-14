@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://boicjt6g0kbex"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://boicjt6g0kbex"]
 
 [ext_resource type="FontFile" uid="uid://v76f8dvtdpqj" path="res://assets/fonts/press_start_2p-regular.ttf" id="1_rb7yf"]
 
@@ -12,8 +12,34 @@ grow_begin = 2.0
 grow_end = 2.0
 thickness = 2
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_otv4o"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eyc47"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
 [resource]
 default_font = ExtResource("1_rb7yf")
 default_font_size = 16
 HSeparator/constants/separation = -6
 HSeparator/styles/separator = SubResource("StyleBoxLine_wgmug")
+Panel/styles/panel = SubResource("StyleBoxFlat_otv4o")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_eyc47")

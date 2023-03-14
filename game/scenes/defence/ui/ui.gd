@@ -76,11 +76,11 @@ func _on_tower_selerter_tower_selected(_index: int) -> void:
 
 
 func _on_build_cursor_pressed(point_position: Vector2, rotate_side: int):
-	if _is_destroy:
-		emit_signal("tower_distroed", point_position)
-	
-	elif _posibility_build:
+	var tower: TowerBody = Towers.get_instanced_object(selected_tower_index)
+	if _posibility_build and GlobalData.has_resource_value(GlobalData.ResourcesType.MONEY, tower.build_prise):
+		GlobalData.change_resource_value(GlobalData.ResourcesType.MONEY, - tower.build_prise)
 		emit_signal("tower_builded", selected_tower_index, point_position, rotate_side)
+		
 
 
 func _on_build_cursor_intersection_change(has_intersection) -> void:

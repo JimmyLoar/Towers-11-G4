@@ -27,6 +27,6 @@ func attack():
 		ammo_box.add_child(projectile)
 		projectile.set_transform(sprite.get_transform())
 		projectile.launch(projectiles_move_speed)
-		
+	
 	recharge_timer.start(1 / base_firerate)
 

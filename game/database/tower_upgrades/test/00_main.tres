@@ -18,6 +18,7 @@ stat_projectiles_timelife = 0.0
 stat_projectiles_move_speed = 500
 stat_attribute_heating_power = 0.0
 stat_attribute_colding_power = 0.0
+stat_hitpoints_amount = -1.0
 stat_hitpoints_recovery = 0.0
 stat_hitpoints_selffire = 0.0
 other_projectiles_layers = 88

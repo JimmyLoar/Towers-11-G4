@@ -14,8 +14,8 @@ var _reaming_penetration = penetration
 @onready var particles: GPUParticles2D = $GPUParticles2D
 @onready var collision_shape: CollisionShape2D = $HitArea/CollisionShape2D
 
-
 func _ready() -> void:
+	reset()
 	self.visible = true
 
 
@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 	
 	if moving_speed <= 0:
 		_disappear()
-	
+
 	else:
 		moving_speed -= delta * 10
 
@@ -47,10 +47,6 @@ func _on_hit_area_area_entered(area: Area2D) -> void:
 	call_deferred("_disappear")
 	collision_shape.set_deferred("disabled", true)
 
-
-func _on_hit_area_area_exited(area: Area2D) -> void:
-	var enemy : EnemyObject = area.get_parent()
-	self.visible = true
 
 
 func _on_visible_on_screen_notifier_2d_screen_entered() -> void:

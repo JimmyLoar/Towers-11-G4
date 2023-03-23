@@ -37,6 +37,7 @@ color_ramp = SubResource("GradientTexture1D_447n1")
 color_initial_ramp = SubResource("GradientTexture1D_brybb")
 
 [node name="Bullet" type="Node2D"]
+z_index = 1
 position = Vector2(13, 11)
 script = ExtResource("1_wer8u")
 
@@ -67,6 +68,3 @@ randomness = 0.3
 draw_order = 2
 
 [connection signal="area_entered" from="HitArea" to="." method="_on_hit_area_area_entered"]
-[connection signal="area_exited" from="HitArea" to="." method="_on_hit_area_area_exited"]
-[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

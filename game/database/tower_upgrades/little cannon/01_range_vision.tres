@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="TowerUpgrade" load_steps=4 format=3 uid="uid://b0bp1mw0ec04t"]
+
+[ext_resource type="PackedScene" uid="uid://cprcy14k6dh78" path="res://game/scenes/tower/projetiles/bullet.tscn" id="1_3atyc"]
+[ext_resource type="Script" path="res://game/classes/tower_upgrade.gd" id="2_xv6m0"]
+[ext_resource type="PackedScene" uid="uid://dbg8wgfifvn5x" path="res://game/scenes/tower/weapon/tweapon_projectile.tscn" id="3_qd4ll"]
+
+[resource]
+script = ExtResource("2_xv6m0")
+name = "Increase Vision Range"
+discription = ""
+weapon = ExtResource("3_qd4ll")
+projectile = ExtResource("1_3atyc")
+prise = 250
+stat_base_damage = 10
+stat_base_range = 6.0
+stat_base_firerate = 1.0
+stat_projectiles_timelife = 0.0
+stat_projectiles_move_speed = 450
+stat_attribute_heating_power = 0.0
+stat_attribute_colding_power = 0.0
+stat_hitpoints_amount = -1.0
+stat_hitpoints_recovery = 0.0
+stat_hitpoints_selffire = 0.0
+other_projectiles_layers = 88
+other_hitscan_layers = 88

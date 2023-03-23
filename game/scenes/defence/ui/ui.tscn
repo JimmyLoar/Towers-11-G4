@@ -64,6 +64,8 @@ grow_horizontal = 0
 
 [node name="Wave" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
 text = "Wave: 0"
 script = SubResource("GDScript_na1a7")
 

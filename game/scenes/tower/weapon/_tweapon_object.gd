@@ -117,7 +117,7 @@ func get_main_texture():
 
 func set_range(value: float):
 	base_range = value
-	self.vision_shape.shape.radius = value * CellObject.CELL_SIZE.x
+	self.vision_shape.shape.radius = (value + 0.5) * CellObject.CELL_SIZE.x
 	
 
 func set_stats(stats: Dictionary):

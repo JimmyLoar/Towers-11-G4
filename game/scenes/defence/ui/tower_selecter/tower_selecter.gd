@@ -53,7 +53,7 @@ func _update_items():
 		
 		var tower_index = GlobalData.towers_selected[child.get_index()]
 		var tower: TowerBody = Towers.get_instanced_object(tower_index)
-		child.set_prise(tower.build_prise)
+		child.set_prise(tower.get_upgrade().prise )
 
 
 func _pressed_button(index):

@@ -76,6 +76,7 @@ offset_bottom = 22.0
 text = "R"
 
 [node name="Button" type="Button" parent="."]
+visible = false
 layout_mode = 2
 focus_mode = 0
 text = "toggle size"

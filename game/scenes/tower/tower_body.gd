@@ -14,11 +14,6 @@ func swap_weapon():
 	pass
 
 
-func get_current_stat(stat_name: String): 
-	#Незабыть удалить, после изменения в "res://game/scenes/defence/objects_manager.gd", 21 сторока
-	return 0
-
-
 func apply_upgrade(upgrade: TowerUpgrade):
 	if not upgrade:
 		printerr("Tower %s | can not apply upgrade, upgrade not exist")

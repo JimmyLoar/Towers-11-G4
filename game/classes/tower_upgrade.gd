@@ -24,6 +24,7 @@ extends Resource
 @export_range(0, 100.0, 0.1, "or_greater") var stat_attribute_colding_power := 0.0
 
 @export_subgroup("Hitpoints", "stat_hitpoints")
+@export_range(-1, 100.0, 0.1, "or_greater") var stat_hitpoints_amount := -1.0
 @export_range(0, 100.0, 0.1, "or_greater") var stat_hitpoints_recovery := 0.0
 @export_range(0, 100.0, 0.1, "or_greater") var stat_hitpoints_selffire := 0.0
 

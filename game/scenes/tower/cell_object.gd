@@ -202,8 +202,8 @@ func get_upgrade_indexs(level: String = _upgrade_level) -> Array:
 	return indexs
 
 
-func get_upgrade(index: int):
-	if _upgrade_resources.is_empty():
+func get_upgrade(index: int = -1111) -> TowerUpgrade:
+	if _upgrade_resources.is_empty() or index == -1111:
 		return _upgrade_main
 	
 	index = wrapi(index, 0, _upgrade_resources.size())

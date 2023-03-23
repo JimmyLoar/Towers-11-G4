@@ -16,7 +16,7 @@ func reset():
 	self.set_physics_process(true)
 	self.visible = true
 	self.call_deferred("_reset")
-	if timelife > 0:
+	if timelife > 0.0:
 		self.call_deferred("_connect_timer")
 	return self
 
@@ -26,8 +26,8 @@ func _connect_timer():
 
 
 func _disappear():
+	self.visible = false
 	self.set_process(false)
 	self.set_physics_process(false)
-	self.visible = false
 	emit_signal("disappeared", self)
 

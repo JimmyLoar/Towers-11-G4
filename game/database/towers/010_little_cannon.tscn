@@ -1,0 +1,34 @@
+[gd_scene load_steps=26 format=3 uid="uid://ddev0ngqsndcs"]
+
+[ext_resource type="PackedScene" uid="uid://bn5v3w1fmxoa" path="res://game/scenes/tower/tower_body.tscn" id="1_2am74"]
+[ext_resource type="Resource" uid="uid://cxj2rtb50owux" path="res://game/database/tower_upgrades/little cannon/00_main.tres" id="2_3fu3v"]
+[ext_resource type="Resource" uid="uid://b0bp1mw0ec04t" path="res://game/database/tower_upgrades/little cannon/01_range_vision.tres" id="3_5b4wh"]
+[ext_resource type="Resource" uid="uid://4xpdgsvr40ol" path="res://game/database/tower_upgrades/little cannon/02_radar.tres" id="4_xm8im"]
+[ext_resource type="Resource" uid="uid://lfka5log6akq" path="res://game/database/tower_upgrades/little cannon/03_improved_radar.tres" id="5_bti5p"]
+[ext_resource type="Resource" uid="uid://ce3inhceb2lps" path="res://game/database/tower_upgrades/little cannon/04_small_artillery.tres" id="6_u21og"]
+[ext_resource type="Resource" uid="uid://tcynqiqwhley" path="res://game/database/tower_upgrades/little cannon/05_small_sniper.tres" id="7_701f2"]
+[ext_resource type="Resource" uid="uid://cm8hnawvotipv" path="res://game/database/tower_upgrades/little cannon/06_air_defense.tres" id="8_2323m"]
+[ext_resource type="Resource" uid="uid://cdcn8j0o20c6y" path="res://game/database/tower_upgrades/little cannon/07_damage.tres" id="9_tcvuq"]
+[ext_resource type="Resource" uid="uid://ccgm1wev24i3n" path="res://game/database/tower_upgrades/little cannon/08_damage_plus.tres" id="10_6g6tx"]
+[ext_resource type="Resource" uid="uid://dur6jyegk2cu0" path="res://game/database/tower_upgrades/little cannon/09_super_cannon.tres" id="11_2lkjr"]
+[ext_resource type="Resource" uid="uid://b6dpmlcrmy3kp" path="res://game/database/tower_upgrades/little cannon/10_terror.tres" id="12_4d4nv"]
+[ext_resource type="Resource" uid="uid://bcaas4otfwsqn" path="res://game/database/tower_upgrades/little cannon/11_firerate.tres" id="13_elyb3"]
+[ext_resource type="Resource" uid="uid://drunvcl6mjcj5" path="res://game/database/tower_upgrades/little cannon/12_overclocking.tres" id="14_q165c"]
+[ext_resource type="Resource" uid="uid://dweeejo5hnrpp" path="res://game/database/tower_upgrades/little cannon/13_double_muzzle.tres" id="15_tdutw"]
+[ext_resource type="Resource" uid="uid://b8ufftpmpyyrh" path="res://game/database/tower_upgrades/little cannon/14_hail.tres" id="16_488r0"]
+[ext_resource type="Resource" uid="uid://8sh5syi11i15" path="res://game/database/tower_upgrades/little cannon/15_alternate_volleys.tres" id="17_85bbw"]
+[ext_resource type="Resource" uid="uid://1vx3gg876l27" path="res://game/database/tower_upgrades/little cannon/16_storm.tres" id="18_l56wg"]
+[ext_resource type="Resource" uid="uid://brtl3yl5jom6j" path="res://game/database/tower_upgrades/little cannon/17_explosion_shells.tres" id="19_klcav"]
+[ext_resource type="Resource" uid="uid://chs0en3j2bwiu" path="res://game/database/tower_upgrades/little cannon/18_explosion_heating.tres" id="20_hit0t"]
+[ext_resource type="Resource" uid="uid://jowjf2h2tvtn" path="res://game/database/tower_upgrades/little cannon/19_explosion_range.tres" id="21_7dfyx"]
+[ext_resource type="Resource" uid="uid://ccdd1umxhnwal" path="res://game/database/tower_upgrades/little cannon/20_explosion_damage.tres" id="22_m0c3w"]
+[ext_resource type="Resource" uid="uid://bh1bxrnbrdsuu" path="res://game/database/tower_upgrades/little cannon/21_explosion_large_range.tres" id="23_6g1cq"]
+[ext_resource type="Resource" uid="uid://faokrf2u23up" path="res://game/database/tower_upgrades/little cannon/22_explosion_damage_plus.tres" id="24_bk61y"]
+[ext_resource type="Resource" uid="uid://ctgmvyrfts4ws" path="res://game/database/tower_upgrades/little cannon/23_powerful_explosion.tres" id="25_frsj2"]
+
+[node name="TowerBody" instance=ExtResource("1_2am74")]
+object_name = "Little Cannon"
+build_prise = 20
+_upgrade_main = ExtResource("2_3fu3v")
+_upgrade_resources = Array[Resource("res://game/classes/tower_upgrade.gd")]([ExtResource("3_5b4wh"), ExtResource("4_xm8im"), ExtResource("5_bti5p"), ExtResource("6_u21og"), ExtResource("7_701f2"), ExtResource("8_2323m"), ExtResource("9_tcvuq"), ExtResource("10_6g6tx"), ExtResource("11_2lkjr"), ExtResource("12_4d4nv"), ExtResource("13_elyb3"), ExtResource("14_q165c"), ExtResource("15_tdutw"), ExtResource("16_488r0"), ExtResource("17_85bbw"), ExtResource("18_l56wg"), ExtResource("19_klcav"), ExtResource("20_hit0t"), ExtResource("21_7dfyx"), ExtResource("22_m0c3w"), ExtResource("23_6g1cq"), ExtResource("24_bk61y"), ExtResource("25_frsj2")])
+_upgrade_structure = Array[String](["a", "aa", "aaa", "aaaa", "ab", "aab", "ac", "aca", "acaa", "acab", "b", "ba", "bb", "bba", "bbb", "bbba", "c", "ca", "cb", "cc", "cba", "cca", "ccaa"])

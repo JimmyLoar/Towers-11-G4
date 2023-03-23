@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="TowerUpgrade" load_steps=4 format=3 uid="uid://cxj2rtb50owux"]
+
+[ext_resource type="Script" path="res://game/classes/tower_upgrade.gd" id="1_lyyho"]
+[ext_resource type="PackedScene" uid="uid://cprcy14k6dh78" path="res://game/scenes/tower/projetiles/bullet.tscn" id="1_yjtrt"]
+[ext_resource type="PackedScene" uid="uid://dbg8wgfifvn5x" path="res://game/scenes/tower/weapon/tweapon_projectile.tscn" id="3_eo7ao"]
+
+[resource]
+script = ExtResource("1_lyyho")
+name = "Range Vision"
+discription = ""
+weapon = ExtResource("3_eo7ao")
+projectile = ExtResource("1_yjtrt")
+prise = 50
+stat_base_damage = 5
+stat_base_range = 5.0
+stat_base_firerate = 1.0
+stat_projectiles_timelife = 0.0
+stat_projectiles_move_speed = 450
+stat_attribute_heating_power = 0.0
+stat_attribute_colding_power = 0.0
+stat_hitpoints_amount = -1.0
+stat_hitpoints_recovery = 0.0
+stat_hitpoints_selffire = 0.0
+other_projectiles_layers = 88
+other_hitscan_layers = 88

@@ -6,7 +6,7 @@ const ATTACK_TEXT_COLORS = [
 	Color.ORANGE_RED,
 ]
 
-var towers_selected: Array = [0, 1, 0, 1] #tower indexs
+var towers_selected: Array = [2, 2, 2, 2] #tower indexs
 
 
 enum ResourcesType{MONEY = 100, INFORMATION = 128, PLAYER_LIFE = 555}
@@ -16,11 +16,6 @@ const RESOURCE_DATA = {
 	ResourcesType.PLAYER_LIFE: preload("res://game/database/game_resources/player_life.tres"),
 }
 var _resource_value := Dictionary()
-
-
-func _physics_process(delta: float) -> void:
-	var type = ResourcesType.MONEY
-	change_resource_value(type, 2)
 
 
 func get_resource_value(resource_type: GlobalData.ResourcesType) -> int:

@@ -9,7 +9,6 @@ radius = 480.0
 [node name="TowerWeaponProjectile" instance=ExtResource("1_f06ii")]
 script = ExtResource("2_my2s5")
 rotate_max_speed = 3.14159
-aim_mode = 2
 
 [node name="Sprite" parent="." index="0"]
 texture_filter = 1
